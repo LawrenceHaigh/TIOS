@@ -1,0 +1,133 @@
+// ==============================================
+// PRINT.SCSS
+// ==============================================
+
+// ==========================================================================
+// Print styles.
+// Inlined to avoid the additional HTTP request: h5bp.com/r
+// ==========================================================================
+
+@media print {
+    *,
+    *:before, 
+    *:after {
+        background: transparent !important;
+        color: #000 !important; // Black prints faster: h5bp.com/s
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")"; 
+    }
+  
+    a[href="index.htm"]:after,
+    a[href="/"]:after,
+    a[href="#"]:after {
+       content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; // h5bp.com/t
+    }
+
+    tr, 
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    
+    @page {
+        margin-top: 2cm;
+        margin-bottom: 2cm;
+    }
+  
+    .tile-feed__load-more,
+    .accessible-nav,
+    .banner--cookie,
+    .filter-form,
+    footer {
+      display: none!important;
+    }
+  
+    *:not(.site-logo) {
+      height: auto!important;
+      width: auto!important;
+    }
+    
+    .carousel-item,
+    .feature-carousel,
+    .feature-panel-carousel {
+      > img,
+      button {
+        display: none!important; 
+      }
+    }
+
+    main > div {
+      page-break-after: always;
+      margin-top: 50px;
+    }
+    
+    .box-out-border {
+      border: none!important;
+    }
+  
+    .box-out {
+      display: block;
+      margin-bottom: 30px!important;
+      page-break-inside: avoid!important;
+    }
+  
+    .site-logo {
+      display: block!important;
+    }
+    
+    .instagram-feed{
+      //page-break-after: always!important; 
+      img{
+          display: none;
+      }
+      
+      li {
+        display: block!important;
+        margin-bottom: 20px!important;
+        width:100% !important;
+        
+      }
+      
+      .instagram-feed-text {
+        display: block;
+      }
+    }
+  
+    div {
+        //page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,125 @@
+//
+// Visibility utilities
+//
+
+.invisible {
+  //@include invisible();
+}
+
+// Responsive visibility utilities
+
+@each $bp in map-keys($grid-breakpoints) {
+  .hidden-#{$bp}-up {
+    @include media-breakpoint-up($bp) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$bp}-down {
+    @include media-breakpoint-down($bp) {
+      display: none !important;
+    }
+  }
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+.visible-print-block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.hidden-print {
+  @media print {
+    display: none !important;
+  }
+}
+@media only screen and ($bp-xs-max) {
+	.hide-xs {
+		display:none;
+	}
+}
+@media only screen and ($bp-sm-min) and ($bp-sm-max) {
+	.hide-sm {
+		display:none;
+	}
+}
+@media only screen and ($bp-sm-min) {
+	.hide-sm-up {
+		display:none;
+	}
+}
+@media only screen and ($bp-sm-max) {
+	.hide-sm-down {
+		display:none;
+	}
+}
+@media only screen and ($bp-md-min) and ($bp-md-max)  {
+	.hide-md {
+		display:none;
+	}
+}
+@media only screen and ($bp-md-min)  {
+	.hide-md-up {
+		display:none;
+	}
+}
+@media only screen and ($bp-md-max)  {
+	.hide-md-down {
+		display:none;
+	}
+}
+@media only screen  and ($bp-lg-min) and ($bp-lg-max)  {
+	.hide-lg {
+		display:none;
+	}
+}
+@media only screen  and ($bp-lg-min)  {
+	.hide-lg-up {
+		display:none;
+	}
+}
+@media only screen  and ($bp-lg-max)  {
+	.hide-lg-down {
+		display:none;
+	}
+}
+@media only screen  and ($bp-xl-min) and ($bp-xl-max)  {
+	.hide-xl {
+		display:none;
+	}
+}
+@media only screen  and ($bp-xl-min)  {
+	.hide-xl-up {
+		display:none;
+	}
+}
+@media only screen  and ($bp-xl-max)  {
+	.hide-xl-down {
+		display:none;
+	}
+}
+@media only screen and ($bp-xxl-min)  {
+	.hide-xxl {
+		display:none;
+	}
+}

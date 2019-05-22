@@ -1,0 +1,120 @@
+//
+// Variables
+// --------------------------------------------------
+
+// colors ---------------------------------------
+
+$textcolor: #000000;
+$nearlyblack: #222222;
+$darkgrey: #444444;
+$secondarygrey: #8f8f8f;
+$verylightgrey: #F3F3F3;
+$keyline: #cccccc; 
+$offwhite: #f0f0f0; 
+$white: #ffffff;
+$purple: #06847d;
+$blue: #009fe3;
+$lightblue: #00A3E0;
+$black: #000000;
+$secondarypurple: #06847d;
+$error: #d63049;
+$red: #cb2c30;
+
+// TIOS colors ---------------------------------------
+
+$turquoise: #06847d;
+
+
+
+// heights ---------------------------------------
+
+$carousel-xs-height : 182px;
+$carousel-sm-height : 182px;
+$carousel-md-height : 305px;
+$carousel-lg-height : 400px;
+$carousel-xl-height : 470px;
+$carousel-xxl-height : 715px; 
+
+$cycle-carousel-xs-height : 250px;
+$cycle-carousel-sm-height : 400px;
+$cycle-carousel-md-height : 500px;
+$cycle-carousel-lg-height : 650px;
+$cycle-carousel-xl-height : 650px;
+$cycle-carousel-xxl-height : 650px; 
+
+$header-height : 110px;
+
+// media queries --------------------------------
+
+$screen-xs: 319px;	// MOBILE
+$screen-sm: 479px;	// LARGE MOBILE/SMALL TABLET
+$screen-md: 767px;	// TABLET
+$screen-lg: 1007px;	// SMALL DESKTOP
+$screen-xl: 1283px;	// LARGE DESKTOP
+$screen-xxl: 1919px;// EXTRA-LARGE DESKTOP
+
+$bp-xs-min: unquote("min-width: #{$screen-xs}");
+$bp-sm-min: unquote("min-width: #{$screen-sm}");
+$bp-md-min: unquote("min-width: #{$screen-md}");
+$bp-lg-min: unquote("min-width: #{$screen-lg}");
+$bp-xl-min: unquote("min-width: #{$screen-xl}");
+$bp-xxl-min: unquote("min-width: #{$screen-xxl}");
+
+// max-width break points if required, but try to avoid: think mobile first
+$bp-xs-max: unquote("max-width: #{$screen-sm - 1px}");
+$bp-sm-max: unquote("max-width: #{$screen-md - 1px}");
+$bp-md-max: unquote("max-width: #{$screen-lg - 1px}");
+$bp-lg-max: unquote("max-width: #{$screen-xl - 1px}");
+$bp-xl-max: unquote("max-width: #{$screen-xl - 1px}");
+
+// add tweakpoints as required 
+// (http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/#major-minor)
+// @bp-min-md-XX: ~"min-width: XXXpx"; 
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: $screen-xs,
+  // Small screen / phone
+  sm: $screen-sm,
+  // Medium screen / tablet
+  md: $screen-md,
+  // Large screen / desktop
+  lg: $screen-lg,
+  // Extra large screen / wide desktop
+  xl: $screen-xl,
+  // Extra extra large screen / wide desktop
+  xxl: $screen-xxl
+);
+
+
+// fonts ----------------------------------------
+
+$base-font-size:	16px !default;
+$base-line-height:	26px !default;
+
+// grid settings --------------------------------
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default; // Gets divided in half for the left and right.
+
+// heights ---------------------------------------
+
+$carousel-xs-height : 182px;
+$carousel-sm-height : 182px;
+$carousel-md-height : 305px;
+$carousel-lg-height : 400px;
+$carousel-xl-height : 550px;
+$carousel-xxl-height : 650px;
+
+$cycle-carousel-xs-height : 400px;
+$cycle-carousel-sm-height : 400px;
+$cycle-carousel-md-height : 500px;
+$cycle-carousel-lg-height : 500px;
+$cycle-carousel-xl-height : 700px;
+$cycle-carousel-xxl-height : 700px; 
+
+$cycle-history-carousel-xs-height : 500px;
+$cycle-history-carousel-sm-height : 500px;
+
+$header-height-mobile : 80px;
+$header-height : 113.5px;

@@ -1,0 +1,27 @@
+//
+// Social feeds
+// --------------------------------------------------
+
+.p-what-we-do {	
+  .feature-video-panel {
+    padding: 0;
+    .video-panel{
+      img {
+        max-height: 700px;
+        background-size: cover;
+        background-position: right center;
+        
+      }
+    }
+  }
+  
+  .service-panel {
+    max-width: 1600px; 
+    margin: 0 auto;
+    position: relative;
+    @media only screen and ($bp-sm-min) { height:$cycle-carousel-sm-height; }
+		@media only screen and ($bp-md-min) { height:$cycle-carousel-md-height; }
+		@media only screen and ($bp-lg-min) { height:$cycle-carousel-lg-height; }
+		@media only screen and ($bp-xl-min) { height:$cycle-carousel-xl-height; }
+  }
+}

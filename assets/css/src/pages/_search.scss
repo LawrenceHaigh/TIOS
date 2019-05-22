@@ -1,0 +1,112 @@
+//
+// Search page
+// --------------------------------------------------
+
+main .searchcontainer {
+  .search__heading {
+    padding-bottom: 0;
+  }
+  
+  .search__count {
+    padding-bottom: 8px;
+  }
+  
+  .search__item {
+    padding: 25px 30px 10px 0;
+    border-bottom: 1px solid $keyline;
+    &:first-of-type {
+      border-top: 1px solid $keyline;
+    }
+    &-heading {
+      padding-bottom: 0;
+      color: $textcolor;
+      @include mediumfont;
+      font-size: 18px;
+      line-height: 28px;
+      margin: 0;
+      padding: 6px 0;
+    }
+    
+    a:link h2, a:link p{
+      color: $textcolor;
+    }
+  }
+  
+  .search__pagination {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    li {
+      display: inline;
+      a {
+        padding: 0 10px;
+        @include link-hover-states {
+          @include mediumfont;
+        }
+        &.lit {
+          @include mediumfont;
+          text-decoration: underline;
+        }
+      }
+     
+    }
+    @media only screen and ($bp-sm-max) {
+      margin: 30px 0;
+    }
+    &-numbers {
+      text-align: center;
+      @media only screen and ($bp-sm-max) {
+        li:nth-child(n+4) {
+          display: none;
+        }
+      }
+    }
+    &-prev, 
+    &-next {
+      top: 0;
+      a span.disabled-link {
+        color: $textcolor;
+      }
+      a:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        @include sprite(arrow-right);
+        display: none;
+      }
+      
+      @media only screen and ($bp-md-max) {
+        a {
+          span {
+            display: none;
+          }
+          &:before {
+            display: block;
+          }
+        } 
+      }
+    }
+    
+    &-prev {
+      left:0;
+      position: absolute;
+      a:before {
+        transform: rotate(180deg);
+      }
+    }
+    
+    &-next {
+      position: absolute;
+      right: 0;
+      a:before {
+        right: 0;
+        top: 6px;
+      }
+    }
+    
+    
+  }
+}

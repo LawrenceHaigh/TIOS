@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PDF">
+            <g id="Group-2">
+                <path d="M6.75697403,0.5 L2.5,5.120985 L2.5,19.5 L18.5,19.5 L18.5,0.5 L6.75697403,0.5 Z" id="Rectangle" stroke="#CB2C30" fill="#FFFFFF"></path>
+                <rect id="Rectangle-3" fill="#CB2C30" x="0" y="6" width="22" height="11"></rect>
+                <text id="PDF" font-family="ClanPro-Medium, Clan Pro" font-size="9" font-weight="400" fill="#FFFFFF">
+                    <tspan x="2" y="15">PDF</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

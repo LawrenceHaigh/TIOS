@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11.6" height="11.688" viewBox="0 0 11.6 11.688">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dc0814;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="11348.7" y="583.5" width="11.6" height="11.688" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Cross_copy" data-name="Cross copy" class="cls-1" d="M11349.4,595.2l-0.8-.707,11-11,0.8,0.707Zm-0.8-11,0.8-.707,11,11-0.8.707Z" transform="translate(-11348.7 -583.5)"/>
+</svg>

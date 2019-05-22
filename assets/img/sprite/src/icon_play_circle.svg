@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>PLAY_Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,14.6572567 L8,5.32872333 C8,5.06520544 8.36111111,4.88074291 8.61111111,5.09155722 L14.5,9.65041676 C14.7222222,9.80852749 14.7222222,10.1511008 14.5,10.3092115 L8.61111111,14.9207746 C8.36111111,15.1052371 8,14.9471264 8,14.6572567 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PLAY_Button">
+            <g>
+                <path d="M10,19.5 C15.2467051,19.5 19.5,15.2467051 19.5,10 C19.5,4.75329488 15.2467051,0.5 10,0.5 C4.75329488,0.5 0.5,4.75329488 0.5,10 C0.5,15.2467051 4.75329488,19.5 10,19.5 Z" id="Oval-5-Copy-6" stroke="#512D6D" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask-Copy-2" fill="#512D6D" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

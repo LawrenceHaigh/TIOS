@@ -1,0 +1,257 @@
+// ==============================================
+// SHARE TO SOCIAL MEDIA
+// ==============================================
+
+/* MEDIA LIBRARY */
+.feature-share {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $purple;
+    color: $white;
+    padding: 25px 30px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
+    &--open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.feature-actions {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.feature-actions__item {
+    margin: 0;
+    padding: 0;
+    &:before {
+        display: none;
+    }
+    a.button {
+        margin-bottom: 0;
+    }
+}
+
+//open button
+button.share-item {
+    border: 0;
+    display: block;
+
+    &.js-share-panel-open {
+        display: inline-block;
+        display: flex;
+    }
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $purple;
+    color: $white;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    &:hover,
+    &:focus {
+        .share-item__icon {
+            opacity: 0.5;
+        }
+    }
+}
+.share-item__icon {
+    @include sprite(icon_share);
+    opacity: 1;
+}
+
+//close
+button.feature-share__close {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 0;
+    display: block;
+
+    &.js-share-panel-close {
+        display: inline-block;
+        display: flex;
+    }
+
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background: $white;
+    color: $purple;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    &:hover,
+    &:focus {
+        background: $white;
+        .share-item-close {
+            opacity: 0.5;
+        }
+    }
+}
+.share-item-close {
+    @include sprite(icon_share-close);
+    opacity: 1;
+}
+
+.share-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+    display: flex;
+}
+.share-list__item {
+    margin: 0;
+    padding: 0 10px 10px 0;
+    &:before {
+        display: none;
+    }
+}
+.share-links__link {
+    align-self: center;
+    .share-list--onpage & {
+        border: solid 1px $keyline;
+    }
+    &:link,
+    &:visited {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $white;
+    }
+    &:hover,
+    &:focus {
+        .share-links__icon {
+            opacity: 0.5;
+        }
+    }
+}
+
+.share-links__icon {
+    //margin: 0 auto;
+    transition: all 0.2s ease;
+    &--twitter {
+        @include sprite(icon_share-twitter);
+    }
+    &--facebook {
+        @include sprite(icon_share-facebook);
+    }
+    &--linkedin {
+        @include sprite(icon_share-linkedin);
+    }
+    &--email {
+        @include sprite(icon_share-email);
+    }
+}
+
+/* ON PAGE - EG NEWS RELEASE */
+.share-module {
+    @media only screen and ($bp-md-min) {
+        float: right;
+        width: 40px;
+        margin-right: 15px;
+    }
+}
+.page-share {
+    @media only screen and ($bp-sm-max) {
+        bottom: 15px;
+        right: 15px;
+    }
+    position: fixed;
+    padding-right: 15px;
+    z-index: 1;
+}
+
+.page-share__panel {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
+
+    @media only screen and ($bp-md-min) {
+        left: 0;
+        top: 50px;
+    }
+    &--open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@media only screen and ($bp-md-min) {
+    .share-list--onpage {
+        flex-direction: column;
+    }
+}
+@media only screen and ($bp-sm-max) {
+    .page-share:before {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease;
+        content: "";
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+    }
+    .page-share--open:before {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+button.page-share__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    &--open {
+        .page-share--open & {
+            display: none;
+        }
+    }
+    &--close {
+        border: solid 1px $keyline;
+        background: $white;
+        color: $purple;
+        display: none;
+        .page-share--open & {
+            display: flex;
+        }
+        &:hover,
+        &:focus {
+            background: $white;
+            color: $purple;
+        }
+    }
+}
+
+.js-share-panel-copy {
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+// ==============================================
+// IOS.SCSS
+// ==============================================
+
+//add specific code for old versions of IOS in here
+
+@media only screen
+and (min-device-width : 320px)
+and (-webkit-min-device-pixel-ratio: 1){ 
+  .overlay-fade,
+  .overlay-media-fade {
+    &.overlay-media {
+      .media-container {
+        top:284px;
+        @media only screen and (orientation: landscape) {
+          top:160px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (-webkit-min-device-pixel-ratio: 1) {  
+  .overlay-fade,
+  .overlay-media-fade {
+    &.overlay-media {
+      .media-container {
+        transform: translate(-50%,-50%);
+        top:512px;
+        left: 50%; 
+        @media only screen and (orientation: landscape) {
+          top:334px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen
+and (min-device-width : 1024px)  {
+  .overlay-fade,
+  .overlay-media-fade {
+    &.overlay-media {
+      .media-container {
+        top:50vh;
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+//
+// Overlays
+// --------------------------------------------------
+
+.overlay-fade,
+.overlay-media-fade {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    &.overlay-media {
+        z-index: 200;
+        top: 0;
+        .media-container {
+            position: relative;
+            transform: translate(-50%, -50%);
+            top: 50vh;
+            left: 50%;
+        }
+        img,
+        video {
+            z-index: 15;
+            margin: 0 auto;
+            position: relative;
+            display: block;
+        }
+    }
+
+    &.overlay-nav {
+        z-index: 15;
+    }
+}
+a:link {
+    &.media-close,
+    &.media-download,
+    &.media-fullscreen,
+    &.media-expand,
+    &.media-fullscreen--video {
+        position: absolute;
+        z-index: 20;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: $white !important;
+        border: 1px solid $keyline;
+        text-indent: -100000px;
+        transition: all 0.2s ease;
+        &:after {
+            content: "";
+            position: relative;
+            display: block;
+            top: 0;
+            transform: translateY(-50%);
+        }
+        @include link-hover-states {
+            //background-color:$purple;
+            &:after {
+                opacity: 0.5;
+            }
+        }
+    }
+    &.media-close {
+        top: 30px;
+        &:after {
+            @include sprite(icon-plus);
+            transform: rotate(45deg);
+            left: 12px;
+            top: -12px;
+        }
+        @include link-hover-states {
+            /*&:after {
+        @include sprite(icon-cross-white);
+      }*/
+        }
+    }
+    &.media-download {
+        bottom: 30px;
+        background: $white !important;
+        &:after {
+            @include sprite(arrow-download);
+            left: 10px;
+            top: -6px;
+        }
+        @include link-hover-states {
+            /*&:after {
+        @include sprite(arrow-download-white);
+      }*/
+        }
+    }
+    &.media-expand {
+        bottom: 15px;
+        right: 15px;
+        &:after {
+            @include sprite(icon-plus);
+            left: 12px;
+            top: -6px;
+        }
+    }
+    &.media-fullscreen {
+        bottom: 30px;
+        background: $white !important;
+        background-color: $white !important;
+        opacity: 1;
+        &:after {
+            @include sprite(icon_fullscreen);
+            left: 12px;
+            top: -7px;
+        }
+        @include link-hover-states {
+            background-color: $white !important;
+        }
+    }
+    &.media-fullscreen--video {
+        &:after {
+            @include sprite(icon_play);
+            left: 16px;
+            top: -7px;
+        }
+    }
+}
+
+
+
+.bx-controls-direction a  {
+        position: absolute;
+        z-index: 20;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        border: 2px solid $white;
+        //text-indent: -100000px;
+        transition: all 0.2s ease;
+        &:after {
+            content: "";
+            position: relative;
+            display: block;
+            top: 0;
+            transform: translateY(-50%);
+        }
+    @include link-hover-states {
+        background: rgba(255, 255, 255, 1);
+        &:after,
+        &:before {
+            //background: $turquoise;
+        }
+    }
+
+
+    &.bx-next {
+        &:after {
+            @include sprite(arrow-right);
+            left: 15px;
+            top: 15px;
+        }
+    }
+    &.bx-prev {
+        &:after {
+            @include sprite(arrow-left);
+            left: 12px;
+            top: 15px;
+        }
+    }
+}

@@ -1,0 +1,304 @@
+//
+// Tables
+// --------------------------------------------------
+
+// Generic
+// ----------------------------------------------
+table {
+    //border-collapse: collapse;
+    //border-spacing: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    font-size: 16px;
+    .old-ie & {
+        font-size: 1em;
+    }
+    th {
+        text-align: left;
+        font-weight: normal;
+        @include mediumfont;
+        // &.align-right {
+        // 	text-align: right;
+        // }
+    }
+    td,
+    th {
+        padding: 0;
+        min-width: 140px;
+        a {
+            &[class^="link-"] {
+                color: $darkgrey;
+            }
+        }
+    }
+    thead {
+        td,
+        th {
+            border-bottom: 1px solid $keyline;
+        }
+    }
+    tbody {
+        position: relative;
+        tr {
+            //position: relative;
+            //float: inherit;
+            //border-bottom: 1px solid $keyline;
+            // display: block;
+            &:after {
+                transition: all 0.2s ease;
+                content: "";
+                position: absolute;
+                //					display:block;
+                float: left;
+                opacity: 0;
+                height: 1px;
+                background: #ccc;
+                bottom: auto;
+                left: 0;
+                width: 100%;
+            }
+            &.hover,
+            &:hover {
+                //background: $verylightgrey;
+                a[class^="link"] {
+                    //text-decoration:underline;
+                    color: $nearlyblack;
+                    //margin:-20px;
+                    @include link-hover-states {
+                        //@include bookfont;
+                        //background:$purple;
+                        //color:$white;
+                    }
+                }
+                &:after {
+                    //					background:$secondarypurple;
+                    //					height:3px;
+                    //          opacity: 1;
+                }
+                td {
+                    //background: $verylightgrey;
+                    //border-bottom: 1px solid $secondarypurple;
+                    //&.link-hover {
+                    //    background: $purple;
+                    //    a[class^="link"] {
+                    //        color: $white;
+                    //    }
+                    //}
+                }
+            }
+            strong {
+                font-weight: normal;
+                @include mediumfont;
+            }
+            td {
+                background: $white;
+                //border-bottom: 1px solid $keyline;
+                transition: all 0.2s ease;
+                a,
+                a:link,
+                a:visited {
+                    text-decoration: underline;
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.accordion {
+    table {
+        tr {
+            position: initial;
+        }
+    }
+}
+
+// Financial
+// ----------------------------------------------
+table.table-downloads {
+    border-collapse: separate;
+    caption {
+        font-size: 18px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+    tr:first-child {
+        th,
+        td {
+            border-top: solid 1px $keyline;
+        }
+    }
+    th,
+    td {
+        border-bottom: solid 1px $keyline;
+        text-align: left;
+        vertical-align: bottom;
+        padding: 10px 15px 10px 10px;
+        &:first-child {
+            text-align: left;
+            vertical-align: top;
+        }
+    }
+}
+
+// Financial
+// ----------------------------------------------
+table.table-financial {
+    border-collapse: separate;
+    tr {
+        &.line {
+            th,
+            td {
+                border-bottom: solid 1px $keyline;
+            }
+        }
+        &.thickline {
+            th,
+            td {
+                border-bottom: solid 1px $keyline;
+            }
+        }
+    }
+    th,
+    td {
+        text-align: right;
+        vertical-align: bottom;
+        padding: 20px;
+        &:first-child,
+        &.left {
+            text-align: left;
+        }
+        &.center {
+            text-align: center;
+        }
+        &.aligntop {
+            vertical-align: top;
+        }
+        &.alignbottom {
+            vertical-align: bottom;
+        }
+        &.alignmiddle {
+            vertical-align: middle;
+        }
+        &.indent {
+            text-align: left;
+            padding-left: 15px;
+        }
+        &.doubleindent {
+            text-align: left;
+            padding-left: 30px;
+        }
+        &.highlight {
+            background: $verylightgrey;
+        }
+        &.line {
+            border-bottom: 1px solid $keyline;
+        }
+        &.noline {
+            border-bottom: none !important;
+        }
+    }
+    thead {
+        th,
+        td {
+            vertical-align: bottom;
+        }
+        tr:last-child {
+            th,
+            td {
+                border-bottom: 1px solid $keyline;
+            }
+        }
+    }
+    tbody {
+        th,
+        td {
+            border-bottom: solid 1px $keyline;
+            &.borderleft {
+                border-left: 1px solid $textcolor;
+            }
+            &.bordertop {
+                border-top: 1px solid $textcolor;
+            }
+            &.borderbottom {
+                border-bottom: 1px solid $textcolor;
+            }
+            &.borderbottomthick {
+                border-bottom: 2px solid $textcolor;
+            }
+            &.borderright {
+                border-right: 1px solid $textcolor;
+            }
+        }
+        tr.hover {
+            th,
+            td {
+                background: $keyline;
+                &.highlight {
+                    background: $keyline;
+                }
+            }
+        }
+    }
+    tfoot {
+        td {
+            font-size: 14px;
+            // font-weight: normal;
+            // ol li {
+            // 	font-weight: normal;
+            // }
+        }
+    }
+}
+
+// Responsive tables
+//
+// Wrapping your tables in `.table-responsive` enables horizontal scrolling
+
+.table-responsive {
+    position: relative;
+    overflow: hidden; /* Clips the shadow created with the pseudo-element in the next rule. Not necessary for the actual scrolling. */
+}
+.table-responsive.has-scroll:after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 50px;
+    height: 100%;
+    border-radius: 10px 0 0 10px / 50% 0 0 50%;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+    content: "";
+}
+
+.table-scroll {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    min-height: 0.01%;
+    @include clearfix;
+    @media screen and ($bp-lg-max) {
+        width: 100%;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        margin-bottom: 40px;
+        table {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media only screen and ($bp-md-min) {
+    .col-md-7 .table-wrapper {
+        //fix for tables in press releases
+        width: calc(((100% / 7) * 12) + 15px);
+    }
+}
+
+.footnotes {
+    @media only screen and ($bp-lg-min) {
+        margin: 0 10%;
+    }
+}

@@ -1,0 +1,477 @@
+//
+// Typography
+// --------------------------------------------------
+
+html {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+body {
+  overflow: hidden;
+  background: white;
+  color: $textcolor;
+  margin: 0;
+  padding: 0;
+  @include bookfont; 
+  font-size: ($base-font-size - 2);
+  line-height: ($base-line-height - 2);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  @media only screen and ($bp-md-min) {
+	  font-size: $base-font-size;
+	  line-height: $base-line-height;
+  }
+}
+
+
+// Headings
+// -------------------------
+h1, .h1 { 
+  @include mediumfont;
+  font-size: 30px;
+	line-height: 40px;
+  margin: 0;
+  padding: 0 0 11px 0; 
+  &.light {
+	  @include thinfont;
+	  padding-bottom:16px;
+  }
+  @media only screen and ($bp-md-min) {
+	font-size: 40px;
+	line-height: 50px; 
+  }
+  @media only screen and ($bp-lg-min) {
+	/*font-size: 40px;
+	line-height: 50px;  */
+  }
+  @media only screen and ($bp-xl-min) {
+	font-size: 50px;
+	line-height: 60px;  
+  }
+}
+h2, .h2 { 
+  @include mediumfont;
+  font-size: 26px;
+  line-height: 36px;
+  margin: 0;
+  padding: 0;
+  + {
+	  h3, .h3 {
+		  margin-top:-2px;
+		  @include bookfont;
+	  }
+  }
+  @media only screen and ($bp-md-min) {
+	  font-size: 28px;
+	line-height: 38px;
+  }
+  @media only screen and ($bp-lg-min) {
+	  
+  }
+  @media only screen and ($bp-xl-min) {
+	font-size: 35px;
+	line-height: 45px;
+  }
+}
+h3, .h3 { 
+  @include mediumfont;
+  font-size: 22px;
+  line-height: 32px;
+  margin: 0;
+  padding: 16px 0;
+  @media only screen and ($bp-md-min) {
+
+  }
+  @media only screen and ($bp-lg-min) {
+	  
+  }
+  @media only screen and ($bp-xl-min) {
+	font-size: 28px;
+	line-height: 38px;
+  }
+  + {
+	  h4, .h4 {
+		  margin-top:-22px;
+	  }
+  }
+  &.latest-h3{
+    padding-bottom: 0;
+  }
+}
+h4, .h4 { 
+@include bookfont;
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0;
+  padding: 6px 0;
+  @media only screen and ($bp-md-min) {
+	  
+  }
+  @media only screen and ($bp-lg-min) {
+	  
+  }
+  @media only screen and ($bp-xl-min) {
+	font-size: 22px;
+	line-height: 32px;
+  }
+}
+h5, .h5 { 
+@include mediumfont;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  padding: 6px 0;
+  @media only screen and ($bp-md-min) {
+	  
+  }
+  @media only screen and ($bp-lg-min) {
+	  
+  }
+  @media only screen and ($bp-xl-min) {
+	  
+  }
+}
+h6, .h6 { 
+	@include mediumfont;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 + h2, h2 + h3 {
+  padding-top: 0;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+	//color: $textcolor;
+	&.white, .white-text & { color:$white; }
+	&.black, .black-text & { color:$black; }
+	&.font-b { @include bookfont; }
+	&.font-m { @include mediumfont; }
+	
+	&.font-xl { 
+		font-size:28px; line-height:38px;
+		@media only screen and ($bp-md-min) {
+			font-size:35px; line-height:45px;
+		  }
+		  @media only screen and ($bp-lg-min) {
+			  font-size:50px; line-height:60px;
+		  }
+		  @media only screen and ($bp-xl-min) {
+			  font-size:60px; line-height:75px;
+		  }
+	}
+}
+
+// Body text
+// -------------------------
+
+p, .p {
+	@include bookfont;
+  margin: 0;
+  padding: 0 0 30px 0;
+  text-align:left;
+ &.contact, .contact & {
+	  strong {
+		  display:block;
+		  color: $nearlyblack;
+	  }
+	  em {
+			@include mediumfont;
+			font-style:normal;
+	  }
+  }
+  strong {
+	font-weight:normal;
+	@include mediumfont;
+	}
+	&.small {
+		font-size:14px;
+			line-height:26px;
+	}
+}
+
+.legal-notice {
+	h2 {
+		margin-bottom: 20px;
+	}
+}
+
+.intro {
+	@include thinfont;
+	color:$textcolor;
+	font-size: 18px;
+	line-height: 28px;
+	margin: 0;
+	padding: 0 0 20px 0;
+
+  @media only screen and ($bp-md-min) {
+	  font-size: 22px;
+  		line-height: 32px;
+  }
+  @media only screen and ($bp-lg-min) {
+	  
+  }
+  @media only screen and ($bp-xl-min) {
+	  font-size: 28px;
+  		line-height: 38px;
+  }
+}
+
+.content-row {
+	padding-bottom: 30px;
+	h3 {
+		margin: 0;
+		padding: 0 0 20px 0;
+	}
+}
+
+.data-sheet {
+	@include mediumfont;
+}
+.news-content-row {
+	img {
+		margin: 20px 0;
+	}
+	.intro {
+		padding: 20px 0;
+	}
+}
+
+strong, .bold {
+  /* if using a webfont...
+  font-weight: normal;
+  font-family: $your-bold-webfont;
+  */
+}
+
+
+// Blockquotes
+// ----------------------------------------------
+blockquote {
+	margin: 0 0 16px 15px;
+	padding: 10px 20px 10px 0;
+	position:relative;
+  @media only screen and ($bp-lg-min) {
+//    width: 85%;
+  }
+	p {color:$nearlyblack;}
+	p:not(.contact) {
+		@include mediumfont;
+		quotes: '\201c' '\201d';
+		font-size:22px;
+		line-height:32px;
+		padding: 8px 0 0 0;
+		margin-bottom:9px;
+		&:first-child {
+			padding-top:0;
+		}
+		&:before {
+			content: open-quote;
+			position:absolute;
+			left:-15px;
+		}
+	}
+	&.thin-font {
+		p:not(.contact) {
+			@include thinfont;
+			&:before {
+				font-size:30px;
+				top:15px;
+			}
+		}
+	}
+	&.small {
+		padding-left:12px;
+    margin-top: 15px;
+    @media only screen and ($bp-lg-max) {
+      margin-left: 0;
+    }
+		p:not(.contact) {
+			font-size:16px;
+			line-height:26px;
+			&:before {
+				left:3px;
+			}
+		}
+		p.contact {
+			font-size:14px;
+			line-height:26px;
+		}
+	}
+}
+
+.blockquote-col-2 {
+  @media only screen and ($bp-sm-min) and ($bp-lg-max) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+// Figures
+// ----------------------------------------------
+
+p.figure, .figure p {
+	font-size:18px;
+	line-height:28px;
+	@extend .u-margin-b;
+	strong {
+		font-weight:normal;
+		@include thinfont;
+		display:block;
+		margin-bottom:7px;
+		font-size:50px;
+		line-height:45px;
+		color:$blue;
+	}
+	&.figure-dark {
+	strong {
+		color: $nearlyblack;
+		}
+	}
+	&.figure-white {
+	strong {
+		color: $white;
+		}
+	}
+}
+
+// Captions
+// ----------------------------------------------
+figure {
+	margin:0;
+}
+figcaption {
+	@include bookitalicfont;
+	margin-top:10px;
+}
+
+//Share Price
+//-----------------------------------------------
+p {
+	&.share-price {
+		font-size:28px;
+		line-height:30px;
+		strong {
+			display:inline-block;
+			font-weight:normal;
+			@include mediumfont;
+			
+			margin-right:7px;
+			@media only screen and ($bp-sm-min) {
+				+ em {
+					clear:left;
+				}
+			}
+		}
+		em {
+			display:inline-block;
+			@include thinfont;
+			font-style:normal;
+			margin-right:7px;
+		}
+		.subnav-panel & {
+			em, strong {
+				font-size:24px;
+				line-height:34px;
+				margin-right:0;
+			}
+		}
+		&-large {
+			font-size:35px;
+			line-height:45px;
+			strong {
+				@include thinfont;
+				color:$lightblue;
+			}
+		}
+	}
+}
+
+// Feature panel labels
+// ----------------------------------------------
+h1, h2, h3, h4, h5, h6, p {
+	&.feature-label {
+		color: $turquoise;
+		@include mediumfont;
+		font-size:14px;
+		line-height:18px;
+		float:left;
+		+ .feature-date {
+			float:left;
+		}
+		.white-text & {
+			color:$white;
+		}
+		.black-text & {
+			color:$black;
+		}
+		.subnav-panel & {
+			color:$white;
+			float:none;
+				+ p {
+					font-size:32px;
+					line-height:42px;
+					strong {
+						font-size:35px;
+						line-height:45px;
+					}
+				}
+		}
+		@media only screen and ($bp-lg-min) {
+			&.large {
+				font-size:18px;
+				line-height:23px;
+			}
+		}
+	}
+	&.feature-title {
+		clear:both;
+		@include mediumfont;
+		padding-top:0;
+		em {
+			font-style:normal;
+			@include thinfont;
+			display:block;
+		}
+		a {
+			.black-text & {
+				color:$black;
+			}
+		}
+	}
+}
+
+.feature-date {
+	@include bookfont;
+	position:relative;
+	font-size:14px;
+	line-height:18px;
+	margin-left:5px;
+	padding-left:7px;
+	color: #4A4A4A;
+	&:before {
+		content:"";
+		border-left:1px solid $darkgrey;
+		position:absolute;
+		left:0;
+		top:0px;
+		height:15px;
+	}
+}
+
+.feature-text {
+	@include thinfont;
+	clear:both;
+	a:link, a:visited, a:active {
+		color:$textcolor;
+		text-decoration:none;
+		@include link-hover-states {
+			text-decoration:underline;
+			color:$turquoise;
+		}
+	}
+}

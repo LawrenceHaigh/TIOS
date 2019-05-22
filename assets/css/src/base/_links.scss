@@ -1,0 +1,298 @@
+//
+// Links
+// --------------------------------------------------
+a {
+    &:link,
+    &:visited {
+        background-color: inherit;
+        color: $turquoise;
+        text-decoration: none;
+        outline: 0;
+        .white-text & {
+            color: $white;
+            @include link-hover-states {
+                color: $white;
+            }
+        }
+    }
+    @include link-hover-states {
+        text-decoration: underline;
+        //border-bottom:1px solid;
+    }
+    &.hover-link {
+        @include link-hover-states {
+            @include mediumfont;
+            text-decoration: underline;
+        }
+    }
+}
+
+// Link with icon
+// -------------------------
+a.link {
+    position: relative;
+    display: inline-block;
+    padding-left: 29px;
+    @extend .hover-link;
+    text-decoration: none;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        @include sprite(arrow-right);
+    }
+    .link-hover & {
+        @include bookfont;
+        text-decoration: underline;
+        &:before {
+            @include sprite(arrow-right-white);
+        }
+    }
+}
+a.link-arrow-after {
+    position: relative;
+    display: inline-block;
+    padding-right: 29px;
+    @extend .hover-link;
+    text-decoration: underline;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 11px;
+        @include sprite(arrow-right);
+    }
+    .white-text & {
+        &:after {
+            @include sprite(arrow-right-white);
+        }
+    }
+}
+
+// Download link
+// -------------------------
+a.link-download {
+    position: relative;
+    display: inline-block;
+    padding-left: 29px;
+    @extend .hover-link;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        @include sprite(arrow-download);
+    }
+    .link-hover & {
+        @include bookfont;
+        text-decoration: underline;
+        &:before {
+            @include sprite(arrow-download-white);
+        }
+    }
+}
+
+// Internal link
+// -------------------------
+a.link-internal {
+    position: relative;
+    display: inline-block;
+    padding-left: 29px;
+    @extend .hover-link;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        @include sprite(arrow-line-right);
+    }
+}
+
+// External link
+// -------------------------
+a.link-external {
+    position: relative;
+    display: inline-block;
+    padding-left: 29px;
+    @extend .hover-link;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        @include sprite(arrow-external);
+    }
+}
+
+// Webcast link
+// -------------------------
+a.link-webcast {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    @extend .hover-link;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        @include sprite(arrow-play-small);
+    }
+}
+
+// Back link
+// -------------------------
+a.link-back {
+    //	position: absolute;
+    //bottom: 10px;
+    padding-left: 18px;
+    padding-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    @extend .hover-link;
+    @media only screen and ($bp-xxl-min) {
+        //margin-left: 30px;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        @include sprite(arrow-right);
+        transform: rotate(180deg);
+    }
+}
+
+a.link-see-all {
+    padding: 7px 5px;
+    float: right;
+    @extend .hover-link;
+}
+
+// Document icons (IR section)
+// -------------------------
+[class^="icon-"] {
+    &:hover,
+    &:focus {
+        &:before {
+            z-index: 2;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            left: -2px;
+            top: 0;
+            min-width: 26px;
+            min-height: 25px;
+            z-index: 1;
+            background-color: $keyline;
+            background-size: 30px;
+            background-position: left;
+        }
+    }
+}
+.icon-pdf {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon_pdf);
+    }
+}
+.icon-xls {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon_xls);
+    }
+}
+.icon-document {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon_document);
+    }
+}
+.icon-play-circle {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 25px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon_play_circle);
+    }
+}
+.icon-xbrl {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon_xbrl);
+    }
+}
+.icon-print {
+    min-width: 25px;
+    min-height: 25px;
+    // float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include sprite(icon-print);
+    }
+}
+
+span.icon-pdf,
+span.icon-xls,
+span.icon-document,
+span.icon-xbrl {
+    &:before {
+        opacity: 0.5;
+    }
+    &:after {
+        display: none;
+    }
+}

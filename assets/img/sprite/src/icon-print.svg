@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Print_Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Print_Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <path d="M6.75697403,0.5 L2.5,5.120985 L2.5,19.5 L18.5,19.5 L18.5,0.5 L6.75697403,0.5 Z" id="Rectangle-Copy-13" stroke="#512D6D" fill="#FFFFFF"></path>
+            <path d="M0,6 L3,6 L3,8 L18,8 L18,6 L19,6 C20.6568542,6 22,7.34314575 22,9 L22,17 L18,17 L18,15 C8,15 3,15 3,15 C3,15 3,15.6666667 3,17 L0,17 L0,6 Z" id="Rectangle-3-Copy-2" fill="#512D6D"></path>
+        </g>
+    </g>
+</svg>

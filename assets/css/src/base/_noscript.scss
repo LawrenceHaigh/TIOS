@@ -1,0 +1,16 @@
+//
+// <noscript> styles
+// --------------------------------------------------
+
+html.no-js {
+	main {margin-top:0;}
+	
+	.slide-countdown, img.slope, .cycle-list {
+		display:none;
+	}
+	.carousel-item {
+		.feature-text {
+			position:relative;
+		}
+	}
+}

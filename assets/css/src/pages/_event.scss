@@ -1,0 +1,42 @@
+body {
+  main.big-event {
+    .hero-panel img {
+      height: 300px;
+      background-image: url(../../img/bg_event_panel_half.png); 
+    }
+    
+    .box-out  {
+      .p {
+        font-size: 16px;  
+        line-height: 26px;
+      }
+      .feature {
+        &-heading {
+          @include bookfont;
+          padding-bottom: 0;
+        }
+        &-sub-heading {
+          @include mediumfont;
+          font-weight: 400;
+        }
+      }
+      &-video {
+        position: relative;
+        
+        .trigger__video {
+          transform: scale(0.7);
+          top: 50%;
+          @media only screen and ($bp-sm-min) {
+            right: 50%;
+          }
+        }
+      }
+    }
+    
+    
+  }
+
+
+
+  
+}

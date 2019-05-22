@@ -1,0 +1,73 @@
+// ==============================================
+// Article index - eg news, blogs, calendar
+// ==============================================
+/*
+ul.articleindex {
+	clear: both;
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	> li {
+		border-bottom: solid 1px @keylinecolordark;
+		clear: both;
+		float: left;
+		.margin-rems(all,0,0,16,0);
+		padding: 0;
+		width: 100%;
+		> h2 {
+			padding: 0;
+		}
+		> .meta {
+			.font-size-rems(14);
+		}
+	}
+}
+table.articleindex {
+	border-bottom: solid 1px @keylinecolordark;
+	margin: 0 0 1em 0;
+	width: 100%;
+	td {
+		border-top: solid 1px @keylinecolordark;
+		padding: .5em;
+		text-align: left;
+	}
+	th {
+		color: @highlightcolor;
+	}
+	h2 {
+		padding: 0;
+	}
+	.inline {
+		padding: 0;
+	}
+}
+
+// ==============================================
+// Article content
+// ==============================================
+.commentform {
+	.padding-rems(all,0,0,60,0);
+	input[type=text], textarea {
+		width: 100%;
+		@media only screen and (@bp-min-lg){
+			width: 70%;
+		}
+	}
+}
+.usercomment {
+	border-bottom: solid 1px @keylinecolordark;
+	.margin-rems(bottom,16);
+	.padding-rems(bottom,16);
+	clear: both;
+	float: left;
+	width: 100%;
+}
+.staffreply {
+	.padding-rems(left,50);
+	border-bottom: solid 1px @keylinecolordark;
+	.margin-rems(bottom,16);
+	.padding-rems(bottom,16);
+}
+*/

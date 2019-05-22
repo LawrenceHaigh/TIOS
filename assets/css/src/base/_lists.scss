@@ -1,0 +1,273 @@
+//
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+    counter-reset: li;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    li {
+        color: $textcolor;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        position: relative;
+
+        &:before {
+            //color: $textcolor;
+            counter-increment: li;
+            display: inline-block;
+            height: 100%;
+            left: -20px;
+            position: absolute;
+        }
+
+        &.carousel-li:first-child {
+            float: left;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    ul,
+    ol {
+        padding-top: 10px;
+    }
+}
+
+ul {
+    @include bookfont;
+    li:before {
+        content: "\25CF";
+        top: -1px;
+        font-size: 10px;
+    }
+}
+
+ol {
+    @include mediumfont;
+    li:before {
+        content: counter(li) ".";
+        top: 0;
+    }
+    ul li:before {
+        content: "\25CF" !important;
+        top: -1px;
+    }
+}
+
+// Unstlyed list
+ul,
+ol {
+    &.list-unstyled {
+        margin-left: 0;
+        list-style: none;
+        li {
+            margin-left: 0;
+            &:before {
+                content: "";
+            }
+        }
+    }
+}
+
+// Inline list
+ul,
+ol {
+    &.list-inline {
+        margin-left: 0;
+        list-style: none;
+        &--nowrap {
+            white-space: nowrap;
+        }
+        li {
+            margin-left: 0;
+            display: inline;
+            &:before {
+                content: "";
+            }
+        }
+    }
+}
+
+// Description Lists
+dl {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+// Document list
+ul.document-list {
+    @extend .list-unstyled;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    @media only screen and ($bp-md-min) {
+        margin-top: 0;
+    }
+    li {
+        @include bookfont;
+        margin-bottom: 0;
+        a {
+            border-top: 1px solid $keyline;
+            border-bottom: 1px solid $keyline;
+            transition: all 0.2s ease;
+            padding: 15px;
+            margin-top: -1px;
+            display: block;
+            text-decoration: none;
+            color: $nearlyblack;
+            @include link-hover-states {
+                background: $purple;
+                color: $white;
+            }
+        }
+        em {
+            display: block;
+            font-style: normal;
+            font-size: 12px;
+            line-height: 28px;
+            margin-top: -6px;
+        }
+        + li {
+            border-top: 0;
+        }
+    }
+    &.two-col {
+        li {
+            @media only screen and ($bp-md-min) {
+                width: 48%;
+                float: left;
+                a {
+                    margin-left: 15px;
+                }
+                &:nth-child(odd) {
+                    clear: left;
+                    a {
+                        margin-right: 15px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.floating-link {
+        li {
+            a {
+                position: relative;
+                @media only screen and ($bp-lg-min) {
+                    padding-right: 45%;
+                }
+                em {
+                    position: relative;
+                    display: block;
+                    padding-left: 25px;
+                    @media only screen and ($bp-lg-min) {
+                        position: absolute;
+                        top: 18px;
+                        right: 15px;
+                        text-align: right;
+                    }
+                    &:before {
+                        content: "";
+                        @include sprite(arrow-download);
+                        position: absolute;
+                        top: 6px;
+                        left: 0;
+                    }
+                }
+            }
+            @include link-hover-states {
+                em {
+                    &:before {
+                        @include sprite(arrow-download-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//ul.two-col {
+//	li {
+//		@media only screen and ($bp-md-min) {
+//		float: left;
+//		width:43%;
+//		}
+//		&:nth-child(odd){
+//			margin-right:2%;
+//		}
+//	}
+//}
+nav ul.two-col {
+    li {
+        break-inside: avoid;
+        @media only screen and ($bp-md-min) {
+            float: left;
+            width: 48%;
+        }
+        &:nth-child(odd) {
+            margin-right: 2%;
+        }
+    }
+}
+
+ul.two-col:not(.document-list) {
+    @media only screen and ($bp-sm-min) {
+        columns: 2;
+        color: $textcolor;
+    }
+
+    li {
+        break-inside: avoid;
+    }
+}
+ul.breadcrumb {
+    @extend .list-unstyled;
+    padding: 15px 0 10px;
+    display: block;
+    margin-bottom: 0;
+    @media only screen and ($bp-xxl-min) {
+        margin-left: 30px;
+    }
+    li {
+        float: left;
+        margin-bottom: 0;
+        a {
+            font-size: 14px;
+            line-height: 50px;
+            color: $black;
+            padding-right: 6px;
+            position: relative;
+            @media only screen and ($bp-xs-max) {
+                line-height: 30px;
+            }
+        }
+        + li {
+            a {
+                padding-left: 6px;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 15px;
+                    background: $black;
+                    position: absolute;
+                    top: 1px;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+//
+// Accordion
+// --------------------------------------------------
+
+.accordion {
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+.accordion__panel {
+    display: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 15px 20px 10px;
+    transition: visibility 0s;
+    visibility: visible;
+    border-bottom: solid 1px $keyline;
+}
+[aria-hidden="true"].accordion__panel {
+    visibility: hidden;
+    transition-delay: 1s, 0s;
+}
+button.accordion__header {
+    border: 0;
+    border-radius: 0;
+    //margin: 0 0 -1px;
+    margin: 0;
+    text-transform: none;
+    &:first-child {
+        border-top: 1px solid $keyline;
+    }
+    border-bottom: 1px solid $keyline;
+    color: $textcolor;
+    @include bookfont;
+    position: relative;
+    display: block;
+    background: none;
+    outline: 0;
+    text-align: left;
+    padding: 22px 55px 21px 20px;
+    width: 100%;
+    span {
+        position: absolute;
+        right: 17px;
+        top: 24px;
+        width: 25px;
+        height: 25px;
+        transition: all 0.5s;
+        display: block;
+        &:before,
+        &:after {
+            display: block;
+            content: "";
+            background: $purple;
+            position: absolute;
+            top: 4px;
+            right: 12px;
+            height: 12px;
+            width: 1px;
+        }
+        &:after {
+            transform: rotate(90deg);
+            display: block;
+        }
+    }
+    @include link-hover-states {
+        cursor: pointer;
+        color: $purple;
+        background: $verylightgrey;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        border-bottom: solid 1px $purple;
+    }
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+    &[aria-expanded="true"] {
+        span {
+            transform: rotate(45deg);
+            transform-origin: 50% 35%;
+        }
+    }
+    &:after {
+        display: none;
+    }
+}
+.accordion__title {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.accordion__all {
+    //@extend .u-reverse-links;
+    float: right;
+    margin-bottom: 10px;
+    .accordion__all__icon {
+        position: relative;
+        display: inline-block;
+        right: 0;
+        top: 1px;
+        margin-left: 10px;
+        width: 17px;
+        height: 17px;
+        transition: all 0.5s;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            height: 17px;
+            width: 1px;
+            top: 0;
+            right: 8px;
+            background: $error;
+            transform: rotate(0deg);
+            transition: all 0.5s;
+        }
+        &:after {
+            content: "";
+            transform: rotate(90deg);
+        }
+    }
+    &.accordion__all--open {
+        .accordion__all__icon {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+//SPECIAL STYLES FOR FOOTER ACCORDION
+footer {
+    .accordion__all {
+        display: none;
+    }
+    .accordion__panel {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .accordion__header {
+        border: 0;
+        color: $textcolor;
+        //		font-family: $medfont;
+        padding: 5px 0;
+        margin-bottom: 15px;
+        span {
+            top: 0;
+            &:before,
+            &:after {
+                height: 21px;
+                transform: rotate(0deg);
+                transition: all 0.5s;
+            }
+            &:after {
+                content: "";
+                transform: rotate(90deg);
+            }
+        }
+        @include link-hover-states {
+            cursor: pointer;
+        }
+        &[aria-expanded="true"] {
+            span {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    .accordion__title {
+        // @media only screen and (min-width: $screen-md) {
+        clip: inherit;
+        height: auto;
+        width: auto;
+        margin: 0;
+        position: inherit;
+        //	}
+    }
+}

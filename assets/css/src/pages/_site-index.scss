@@ -1,0 +1,64 @@
+//
+// Site index
+// --------------------------------------------------
+
+.site-index {
+  
+  padding-bottom: 60px;
+  
+  &__index {
+      margin: 0 0 2em 0;
+      padding: 0;
+
+    li {
+      display: inline;
+      margin-right: 0.7em;
+      
+      a.lit {
+        @include mediumfont;
+        text-decoration: underline;
+      }
+      a.disabled-link {
+        pointer-events: none;
+        opacity: 0.5;
+        color: $textcolor;
+      }
+    }
+
+  }
+  
+  &__item {
+    &-letter {
+      border-bottom: 1px solid $keyline;
+      margin-bottom:20px;
+      padding-bottom: 10px;
+    }
+    
+    &-content-left,
+    &-content-right {
+      float: left; 
+      @media only screen and ($bp-sm-max) {
+        float: none;
+      }
+    }
+    
+    &-content-left {
+      padding: 0 15px;
+      p {
+        @include bookfont;
+      }
+    }
+    &-content-right {
+      @media only screen and ($bp-sm-max) {
+        margin-left: 15px;
+      }
+      p , li {
+//        @include thinfont
+      }
+      
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

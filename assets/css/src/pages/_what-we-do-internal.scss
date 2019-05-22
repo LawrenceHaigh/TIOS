@@ -1,0 +1,36 @@
+.p-what-we-do-internal {
+    @media only screen and (min-width: 767px) {
+        .feature-panel-carousel {
+            border-left: 1px solid $keyline;
+        }
+    }
+    .table-responsive {
+        th:not(:first-child), td:not(:first-child) {
+            text-align: right;
+        }
+    }
+    ul ul {
+        padding-left: 20px;
+        li:before {
+            content: '\2014';
+            position: absolute;
+            margin-left: 0;
+        }
+    }
+}
+
+.p-what-we-do-listing {
+    .hero-panel {
+        max-height: 470px;
+    }
+}
+
+@media only screen and (max-width: 1006px) {
+    .u-padding-l-0-tablet {
+        padding-left: 0;
+    }
+}
+
+.button-width-196 {
+    width: 196px;
+}

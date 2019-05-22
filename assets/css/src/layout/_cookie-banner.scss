@@ -1,0 +1,84 @@
+//
+// Cookie banner
+// --------------------------------------------------
+
+.banner {
+    background-color: $darkgrey;
+    color: $white;
+    border-top: solid 1px $keyline;
+    @include clearfix;
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 10px;       
+    p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;        
+    }
+    .button {
+        min-width: 160px;
+        font-size: 14px;
+        margin: 10px 5px 5px 5px;
+    }
+    p:first-child {
+        padding-bottom: 0;
+    }
+    p + p {
+        padding-top: 0;
+    }
+    .button--white {
+        margin-left: 15px;
+    }
+}
+.banner--cookie {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    p {
+        max-width: none;
+        padding-bottom: 0;
+    }
+    a.button {
+        margin-top: 20px;
+    }
+}
+
+.closemessage {
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+    text-indent: 30px;
+    display: inline-block;
+    color: $white; 
+    margin: 0 auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &:before, &:after {
+        content: "";
+        background: $white;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 30px;
+        width: 3px;
+        display: inline-block;
+        transform: rotate(135deg);
+    }
+    &:after {
+        content: "";
+        transform: rotate(45deg);
+    }
+    &:hover, &:focus {
+        cursor: pointer;
+        &:before, &:after {
+            background: $keyline;
+        }
+    }
+}
+

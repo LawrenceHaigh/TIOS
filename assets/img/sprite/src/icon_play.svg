@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18,26.5544337 L18,14.4273403 C18,14.0847671 18.4453452,13.8449658 18.7536612,14.1190244 L26.0162143,20.0455418 C26.2902729,20.2510857 26.2902729,20.696431 26.0162143,20.9019749 L18.7536612,26.897007 C18.4453452,27.1368083 18,26.9312643 18,26.5544337 Z" id="path-1"></path>
+    </defs>
+    <g id="Unused-Templates-at-Launch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="J_1284_Media-gallery_XL" transform="translate(-430.000000, -1115.000000)">
+            <g id="Group-6" transform="translate(412.000000, 1101.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask-Copy" fill="#512D6D" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

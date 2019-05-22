@@ -1,0 +1,204 @@
+//
+// Navigation - tabs
+// --------------------------------------------------
+
+.nav {
+	  @include clearfix;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+    li {
+      margin: 4px 0;
+      padding: 0;
+      vertical-align: middle;
+      &:before {
+        content: '';
+      }
+    }
+}
+
+.nav--vertical {
+  li {
+    display: block;
+  }
+  a {
+    border-radius : 5px;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: solid 1px $keyline;    
+    @include link-hover-states {
+      background-color: $offwhite;
+    }
+  }
+}
+
+.nav--horizontal {
+  li {
+    display: inline-block;
+  }
+  a {
+    border-radius : 5px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    border: solid 1px $keyline;   
+    @include link-hover-states {
+      background-color: $offwhite;
+    }
+  }
+}
+
+
+// tabs -----------------------------------------
+
+.nav--tabs {
+  border-bottom: 1px solid $keyline;
+  width: 100%;
+  > li {
+    float: left;
+    margin-bottom : -1px;
+    padding-left: 10px;
+  }
+  a {
+    &:link, &:visited{
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0;
+      display: block;
+      margin: 0 2px 0 0;
+      padding: 10px;
+      text-decoration: none;
+    } 
+    @include link-hover-states {
+        //background-color: white;
+        border-color: $keyline;
+        border-bottom-color: transparent;
+    }
+  }
+  .active {
+    a {
+      &:link, &:visited,&:hover, &:active, &:focus{
+        background-color: white;
+        border-color: $keyline;
+        border-bottom-color: transparent;
+      }
+    } 
+  }
+}
+
+
+
+
+// pagination -----------------------------------
+
+.pagination {  
+  text-align: center;
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    &:before {
+      content:'';
+    }    
+    //corners
+    &:first-child {
+      a, span {
+        border-left-width : 1px;
+        border-top-left-radius : 5px; 
+        border-bottom-left-radius : 5px;
+      }
+    }    
+    &:last-child {
+      a, span {
+        border-top-right-radius : 5px; 
+        border-bottom-right-radius : 5px; 
+      }
+    }
+  }
+
+  //link
+  a, span {
+    float: left; 
+    padding: 10px;
+    text-decoration: none;
+    background-color: $offwhite;
+    border: solid 1px $keyline;
+    border-left-width: 0;
+  }
+  a:hover {
+    background-color: $keyline;
+    color: $textcolor;
+  }
+
+  //active
+  .active {
+    a, span {
+      background-color: $keyline;
+      color: $textcolor;
+      text-decoration: none;
+    }
+    a:active, a:hover {
+      background-color: $textcolor;
+      color: $keyline;
+    }
+  }
+
+  //disabled
+  .disabled {
+    span, a, a:hover {
+      background-color: $turquoise;
+      color: $keyline;
+      cursor: default;
+    }
+  }
+}
+
+
+// pager ----------------------------------------
+
+.pager {
+  list-style-type : none;
+  margin : 10px 0;
+  padding : 0;
+  @include clearfix;
+  li {
+    display : inline;
+    &:before {
+      content: '';
+    }
+  }
+  a, span {
+    background-color: $offwhite;
+    display : inline-block;
+    padding : 10px;
+    border : 1px solid $keyline;
+    border-radius : 5px;
+    text-decoration : none;
+  }
+  a:active, a:hover {
+    background-color: $keyline;
+    text-decoration : none;
+  }
+  .next {
+    a, span {
+      float : right;
+    }
+  }
+  .previous {
+    a, span {
+      float : left;
+    }
+  }
+  .disabled {
+    a, span {
+      color: $keyline;
+      background-color: $offwhite;
+      cursor: default;
+    }
+  }
+}

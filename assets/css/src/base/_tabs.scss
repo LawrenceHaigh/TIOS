@@ -1,0 +1,170 @@
+//
+// Tabs
+// -------------------------
+
+.tabs {
+	@extend .list-unstyled;
+	background:$verylightgrey;
+	overflow:auto;
+	li {
+		float:left;
+		width:100%;
+		text-align:center;
+		margin-bottom:0;
+		@media only screen and ($bp-md-min) {
+			width:25%;
+		}
+		a {
+			transition:background 0.2s ease;
+			@include bookfont;
+			text-decoration:none;
+			display:block;
+			padding:19px 0;
+			border:1px solid $keyline;
+			@media only screen and ($bp-md-min) {
+				border:none;
+				border-right:1px solid $keyline;
+			}
+			@include link-all-states {
+				background:$secondarypurple;
+				color:$white;
+				@include mediumfont;
+			}
+		}
+		&:last-of-type {
+			@media only screen and ($bp-md-min) {
+			a {
+				border:none;
+				}
+			}
+		}
+	}
+	&.tabs-half {
+		li {
+			@media only screen and ($bp-md-min) {
+				width:50%;
+			}
+		}
+	}
+	&.tabs-third {
+		li {
+			@media only screen and ($bp-md-min) {
+				width:33.333333%;
+			}
+		}
+	}
+  &.tabs-fourth {
+		li {
+      @media only screen and ($bp-md-min) {
+				width:100%; 
+			}
+			@media only screen and ($bp-lg-min) {
+				width:25%; 
+			}
+      
+		}
+	}
+	&.tabs-fifth {
+		li {
+      @media only screen and ($bp-md-min) {
+				width:100%; 
+			}
+			@media only screen and ($bp-lg-min) {
+				width:20%; 
+			}
+      
+		}
+	}
+	&:not(.tabs-small) {
+		margin:0 -15px 0;
+		@media only screen and ($bp-md-min) {
+			//margin:0 -1px 0 0;
+		}
+	}
+	&.tabs-small {
+		border-radius:5px;
+		li {
+			a {
+				padding:9px 10px;
+				border:none;
+			}
+		}
+	}
+	&.tabs-lang {
+		border-radius:5px;
+		display:inline-block;
+		border: 1px solid $secondarypurple;
+		max-height: 32px;
+    overflow: hidden;
+    margin-top: 4px;
+    margin-right: 0px;
+		&-positioned {
+			position:absolute;
+			top:0;
+			right:0;
+		}
+    @media only screen and ($bp-xxl-min) {
+      margin-right: 30px;
+    }
+		li {
+			width: 44px;
+			a {
+				display: block;
+				border:none;
+				padding: 4px 0px 0px 0px;
+				@include link-hover-states {
+					text-decoration: underline;
+					background-color: $verylightgrey!important; 
+					color: $secondarypurple!important; 
+				}
+			}
+			a.active {
+				background-color: $secondarypurple!important; 
+				color: $white!important;
+			}
+		}
+	}	
+}
+
+.investors {
+  .tabs-lang {
+    margin-top: 23.5px;
+		@media only screen and ($bp-xs-max) {
+			margin:0px 0px !important;
+		}
+    
+  }
+  &-lang:not(.country-lang){
+     @media only screen and ($bp-xs-max) {
+      display: block!important;
+      position: relative;
+      width: 100%;
+      margin: 0px -15px 10px;
+       
+    }
+    @media only screen and ($bp-xxl-min) {
+      margin-right: 30px;
+    }
+    &-page {
+      @media only screen and ($bp-xs-max) {
+        display: block!important;
+        position: relative;
+        width: 100%;
+        margin: 0px -20px 10px;
+
+      }
+      @media only screen and ($bp-xxl-min) {
+        margin-right: 15px;
+      }   
+    
+    }
+  }
+  
+  &-lang.country-lang {
+    @media only screen and ($bp-xs-max) {
+      .tabs-lang {
+        margin: 0 10px 10px;
+      }
+    }
+  }
+}

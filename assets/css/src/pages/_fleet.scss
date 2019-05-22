@@ -1,0 +1,37 @@
+//
+// Fleet Template
+// --------------------------------------------------
+
+.fleet {
+  .filter-content{
+    &__button-panel {
+      @media only screen and ($bp-xs-min) {
+        margin-top: 20px
+      }
+      @media only screen and ($bp-md-min) {
+        margin-top:0px;
+      }
+      .button {
+        margin-right: 10px;
+      }
+    }
+    &__row-list {
+      li {
+        margin-bottom: 0;
+      }
+    }
+    &__row-img {
+      img {
+        width: 100%;  
+      }
+    }
+    .col-lg-6 {
+      @media only screen and ($bp-xs-min) {
+        padding-left: 0;
+      }
+      @media only screen and ($bp-lg-min) {
+        padding-left: 20px;
+      }
+    }
+  }
+}

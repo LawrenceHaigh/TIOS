@@ -1,0 +1,211 @@
+//
+// Social feeds
+// --------------------------------------------------
+
+.instagram-feed {	
+	ul {
+		@extend .list-unstyled;
+		width:100%;
+		display:inline-block;
+		position:relative;
+		margin-bottom:0;
+		padding-bottom:0;
+		@media only screen and ($bp-lg-min) {
+			width:66.66666%;
+		}
+		li {
+			width:100%;
+			overflow:hidden;
+			margin-bottom: 0px;
+			float:left;
+			border-right:1px solid $white;
+			border-bottom:1px solid $white;
+			background-size:cover!important;
+			background-position:center center!important;
+			@media only screen and ($bp-sm-min) {
+			margin:0;
+			padding:0;
+			width:25%;
+			float:left;
+			border-right:1px solid $white;
+			border-bottom:1px solid $white;
+			background-size:cover!important;
+			background-position:center center!important;
+			}
+			&:nth-child(3) {
+				clear:left;
+        margin-top: 1px;
+			}
+      &:nth-child(4) {
+        margin-top: 1px;
+			}
+			&:last-child {
+				border-right:none;
+				@media only screen and ($bp-sm-min) {
+				width:50%;
+				position:absolute;
+				left:50%;
+				border-right:none;
+				}
+			}
+			.item-wrapper {
+				background-size:cover!important;
+				background-position:center center!important;
+				transition:transform .3s ease-in;
+				@include link-hover-states {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	.instagram-feed-text {
+		width:100%;
+    overflow: hidden;
+		@extend .u-padding-30;
+		border:1px solid $keyline;
+		position:relative;
+		margin-top:-9px;
+		@media only screen and ($bp-lg-min) {
+			margin-top:0;
+			width:33.33333%;
+			float:right;
+		}
+		&:after {
+			content:"";
+			position:absolute;
+			right:30px;
+			bottom:30px;
+			@include sprite(icon_instagram-black-on-white);
+		}
+    .instagram-date {
+			@include mediumfont;
+			position: absolute;
+			top:30px;
+			right:30px;
+			a {
+				color:$darkgrey;
+			}
+		}
+    
+    p {
+//      max-height: calc(100% - 80px);
+      overflow: hidden;
+    }
+	}
+
+	.instagram-video-container {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 0 15px;
+	}
+
+	.instagram-video-thumb {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translateY(-50%);
+		margin-left: -20px;
+		z-index: 3;
+
+
+		span {
+			display: block;
+			-webkit-transition: all .2s ease;
+			transition: all .2s ease;
+			position: relative;
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+			background: rgba(255,255,255,.3);
+			border: 2px solid #fff;
+		}
+		&:before {
+			content: "";
+			transform: rotate(45deg);
+			top: 13px;
+			width: 16px;
+			height: 3px;
+			background: #fff;
+			position: absolute;
+			left: 12px;
+			transition: all 1s ease;
+		}
+		&:after {
+			content: "";
+			width: 16px;
+			height: 3px;
+			background: #fff;
+			position: absolute;
+			left: 12px;
+			transform: rotate(-45deg);
+			transition: all 1s ease;
+			top: 23px;
+		}
+	}
+
+
+}
+
+.twitter-feed {
+	margin-bottom:60px;
+	display:inline-block;
+	.tweet-panel {
+		position:relative;
+		padding-bottom:155px;
+		margin:0 -1px -1px 0;
+		&:after {
+			content:"";
+			position:absolute;
+			bottom:30px;
+			right:30px;
+			@include sprite(icon-twitter-bird-small);
+		}
+		.twitter-handle {
+			@include mediumfont;
+		}
+		.tweet-date {
+			@include mediumfont;
+			position: absolute;
+			top:30px;
+			right:30px;
+			a {
+				color:$darkgrey;
+			}
+		}
+		.tweet-stats {
+			position:absolute;
+			bottom:20px;
+			left:30px;
+			right:30px;
+			p {
+				float:left;
+				padding-bottom:0;
+				position:relative;
+				margin-right:22px;
+				color:$darkgrey;
+				&:before {
+					content:"";
+					position:relative;
+					top:2px;
+					margin-right:2px;
+				}
+				&.tweet-comments {
+					&:before {
+						@include sprite(icon-twitter-comments);
+					}
+				}
+				&.tweet-favourite {
+					&:before {
+						@include sprite(icon-twitter-favourites);
+					}
+				}
+				&.tweet-retweets {
+					&:before {
+						@include sprite(icon-twitter-retweets);
+					}
+				}
+			}
+		}
+	}
+}

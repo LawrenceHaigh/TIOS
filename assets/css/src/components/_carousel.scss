@@ -1,0 +1,647 @@
+//
+// Carousel
+// --------------------------------------------------
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: $textcolor !default;
+$slick-dot-color: $textcolor !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 50px !default; 
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        //background: #fff url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    z-index: 20;
+    @include link-hover-states {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &:before {
+        font-family: $slick-font-family;
+        font-size: 20px;
+        line-height: 1;
+        color: $slick-arrow-color;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: -5px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -5px;
+    }
+    &:before {
+        content: $slick-prev-character;
+        [dir="rtl"] & {
+            content: $slick-next-character;
+        }
+    }
+}
+
+.slick-next {
+    right: -5px;
+    [dir="rtl"] & {
+        left: -5px;
+        right: auto;
+    }
+    &:before {
+        content: $slick-next-character;
+        [dir="rtl"] & {
+            content: $slick-prev-character;
+        }
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+	      &:before {
+	        content: '';
+	      }
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 20px;
+            width: 20px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            @include link-hover-states {
+                outline: none;
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 20px;
+                height: 20px;
+                font-family: $slick-font-family;
+                font-size: $slick-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: $slick-dot-color;
+                opacity: $slick-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.slick-active button:before {
+            color: $slick-dot-color-active;
+            opacity: $slick-opacity-default;
+        }
+    }
+}
+
+//Carousel countdown circle
+.slide-countdown {
+	display:none;
+	@media only screen and ($bp-md-min) {
+		display:block;
+	}
+	position:relative;
+	padding-top:0;
+	.slide-count {
+		font-size:13px;
+		position:absolute;
+		top:13px;
+		left:9px;
+		@media only screen and ($bp-md-min) {
+			top:8px;
+		}
+	}
+}
+#svg {transform:scale(.25)rotate(-90deg); position:absolute; top:50px; left:0; transform-origin:left top;}
+#svg circle {
+  stroke-dashoffset: 1130;
+  transition: stroke-dashoffset 3.9s linear;
+  stroke: $keyline;
+  stroke-width: 8px;
+  transform-origin:top left;
+  &.inverted {
+	  stroke:$purple;
+  }
+}
+#svg #bar {
+  stroke: $purple;
+  &.inverted {
+	  stroke:$white;
+  }
+}
+#countdown {
+  border-radius: 100%;
+  display: block;  
+  height: 50px;  
+  margin: 0 0 15px 0;  
+  position: relative;
+  width: 50px;
+}
+
+.carousel-controls {
+	button {
+		&.prev-slide, &.next-slide, &.pause-slides {
+			height:40px;
+			width:45px;
+			margin-right:-1px;
+			float:left;
+			margin-bottom:30px;
+			@media only screen and ($bp-md-min) {
+				margin-bottom:0;
+			}
+			&:after {
+				content:"";
+				background-color:transparent;
+				@include sprite(arrow-right);
+				position:absolute;
+				top:13px;
+				left:50%;
+				transform:translateX(-50%);
+				margin:0 auto;
+			}
+			@include link-hover-states {
+				&:after {
+					content:"";
+					//background:none;
+					@include sprite(arrow-right-white);
+				}
+			}
+		}
+		&.prev-slide {
+			&:after {
+				transform:rotate(180deg);
+				top:12px;
+				left:16px;
+			}
+		}
+		&.pause-slides {
+			@include link-hover-states {
+				opacity:0.5;
+			}
+			&:after {
+				content:"";
+				width:6px!important;
+				height:15px;
+				background:$white;
+				display:block;
+				border-left:1px solid $purple;
+				border-right:1px solid $purple;
+				margin:0 auto;
+				@include link-hover-states {
+					background:none;
+					&:after {
+							//@include sprite(arrow-right-white);
+						}
+				}
+			}
+		}
+	}
+	&.transparent-controls {
+		button {
+			&.prev-slide, &.next-slide, &.pause-slides {
+				background:transparent;
+				border-color:$white;
+				&:after {
+					@include sprite(arrow-right-white);
+				}
+				@include link-hover-states {
+					background:$white;
+					&:after {
+						@include sprite(arrow-right);
+					}
+				}
+			}
+			&.pause-slides {
+				border:none;
+				&:after {
+					background:transparent;
+					border-color:$white;
+				}
+				@include link-hover-states {
+					background:none;
+					&:after {
+						background:none;
+						//border-color:$purple;
+					}
+				}
+				&.paused {
+					&:after {
+						width: 0; 
+						  height: 0; 
+						  border-top: 7px solid transparent;
+						  border-bottom: 7px solid transparent;
+						  border-left: 9px solid $white;
+						  border-right:none;
+						  margin-left:4px;
+					}
+				}
+			}
+		}
+	}
+	.slide-count {
+		float:left;
+		margin:10px 0 0 10px;
+		@include bookfont;
+		color:$purple;
+		font-size:14px;
+		line-height:24px;
+	}
+}
+
+.cycle-panel{
+	position:relative;
+	&.carousel-home{
+		&:before {
+		content:"";
+		position:absolute;
+		left:0;
+		top:0;
+		bottom:0;
+		width:100%;
+		z-index:10;
+		background: rgba(0,0,0,0.5);
+		/* top to bottom gradient */
+		background: -webkit-linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+    	background: -o-linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+    	background: -moz-linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%); 
+    	background: linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+		@media only screen and ($bp-xl-min) {
+			width:50%;
+			/* left to right gradient */
+			background: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(50%, rgba(0,0,0,0)));
+			background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+			background: -o-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+			background: -ms-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+			background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+			}
+		}
+	}
+	&:not(.carousel-home){
+		&:before {
+			background:none;
+		}
+	}
+	
+	.cycle-list {
+		width:100%;
+		position:absolute;
+		left:0;
+		top:0;
+		bottom:0;
+		z-index:20;
+		//display:table;
+		//overflow:hidden;
+		//display:none;
+		&.top {
+			//top:60px;
+		}
+		@media only screen and ($bp-sm-min) {
+			top:30px;
+		}
+    
+    @media only screen and ($bp-xl-min) {
+			top:0px;
+		}
+		
+		.slick-list {
+			-ms-mask-image: -webkit-gradient(
+				linear, left, right, 
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,0.85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+			-webkit-mask-image: -webkit-gradient(
+				linear, left, right, 
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,0.85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+				mask-image: -webkit-gradient(
+				linear, left, right, 
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+			
+			@media only screen and ($bp-xl-min) {
+				-ms-mask-image: -webkit-gradient(
+				linear, left top, left bottom, 
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,0.85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+				-webkit-mask-image: -webkit-gradient(
+				linear, left top, left bottom, 
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,0.85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+				mask-image: -webkit-gradient(
+				linear, left top, left bottom,  
+				color-stop(0.00,  rgba(0,0,0,0)),
+				color-stop(0.10,  rgba(0,0,0,85)),
+				color-stop(0.85,  rgba(0,0,0,1)),
+				color-stop(1.00,  rgba(0,0,0,0)));
+			}
+		}
+		ul.slick-slider {
+			@extend .list-unstyled;
+			/*margin:40px auto 0;*/
+      width:400px!important;
+      @media only screen and ($bp-lg-max) {
+			  width:150%!important;
+      }
+			margin:10px -25% 0;
+			z-index:400;
+			outline: none;
+			cursor: pointer;
+			@media only screen and ($bp-sm-min) {
+				margin-top:40px;
+			}
+      @media only screen and ($bp-md-min) and  ($bp-xl-max) {
+        display:inline-block;
+        margin-top:0px;
+      }
+			li {
+				float:left;
+				color:$white;
+				transition:font-size .5s ease;
+				font-size:20px;
+				line-height:20px;
+				opacity:0.5;
+				margin:10px 0;
+				text-align:center;
+				display:inline-block;
+				outline: none;
+				padding:0 30px 0 0;
+				@media only screen and ($bp-sm-min) {
+					font-size:25px;
+					line-height:25px;
+				}
+				@media only screen and ($bp-md-min) {
+					font-size:30px;
+					line-height:40px;
+					}
+				@media only screen and ($bp-xl-min) {
+					font-size:35px;
+					line-height:45px;
+					text-align:left;
+					float:none;
+					width:100%!important;
+					}
+				&.blank {
+					height:150px;
+				}
+				&.active {
+					opacity:1;
+					transition:all .5s ease;
+					font-size:20px;
+					@include mediumfont;
+					@media only screen and ($bp-sm-min) {
+						font-size:30px;
+					}
+					@media only screen and ($bp-xl-min) {
+						font-size:65px;
+					}
+				}
+			}
+		}
+	}
+	.cycle-controls {
+		position:absolute;
+		bottom:0;
+		left:15px;
+		right:0;
+		z-index:30;
+		a.button {
+			@extend button.trans-white;
+		}
+    
+    @media only screen and ($bp-sm-max) {
+      .carousel-button a, .carousel-controls button{
+        margin: 0!important;
+      }
+      .carousel-controls {
+        margin-bottom: 10px;
+      }
+    }
+    
+    .carousel-button {
+      @media only screen and ($bp-sm-min) {
+        margin-left: 15px;
+      }
+      @media only screen and ($bp-xl-min) {
+        //text-align: center!important;
+      }
+    }
+		.carousel-controls {
+			float:left;
+			margin-right:30px;
+			@media only screen and ($bp-md-min) {
+				float:right;
+			}
+		}
+    
+	}
+	.carousel-item  {
+		position:relative;
+		background-repeat:no-repeat!important;
+		background-size:cover!important;
+		background-position:center right!important;
+    transition: opacity .2s ease;
+		@media only screen and ($bp-lg-min) {
+			background-position:center center!important;
+		} 
+		.feature-text {
+			position:absolute;
+			bottom:130px;
+			width:100%;
+			&.centred {
+				Top:10%;
+				h2 {
+				@include mediumfont;
+				font-size:32px;
+				line-height:42px;
+				}
+				p {
+				color:$white;
+				@include bookfont;
+				font-size:16px;
+				line-height:26px;
+				float:left;
+				}
+				@media only screen and ($bp-sm-min) {
+				Top:20%;
+				}
+				@media only screen and ($bp-md-min) {
+					padding:0 15px;
+					Top:30%;
+				}
+				@media only screen and ($bp-lg-min) {
+				Top:30%;	
+				}
+			} 
+			@media only screen and ($bp-md-min) {
+				bottom:95px;
+				padding:0;
+			}
+			h2, h3, p {
+				@include bookfont;
+				font-size:16px;
+				line-height:21px;
+				color:$white;
+        @media only screen and ($bp-sm-min) {
+				  font-size:16px;
+          line-height:21px;
+          margin:0 15px;
+				}
+				@media only screen and ($bp-md-min) {
+          font-size:18px;
+          line-height:23px;
+				}
+				@media only screen and ($bp-lg-min) {
+				  font-size:22px;
+          line-height:32px;
+				}
+        @media only screen and ($bp-xl-min) {
+          margin:0 10px;
+        }
+			}
+		}
+	}
+  
+  &.history-panel {
+    .carousel-item  {
+      .feature-text {
+        h2, h3, p {
+          @media only screen and ($bp-sm-min) {
+            padding-left: 0;
+          }
+          @media only screen and ($bp-md-min) {
+            margin-left: 0;
+          }
+          
+        }
+        h2 {
+          @media only screen and ($bp-xs-min) {
+            font-size: 24px;
+            line-height: 34px;
+          }
+          @media only screen and ($bp-md-min) {
+            font-size: 28px;
+            line-height: 38px;
+          }
+          @media only screen and ($bp-xl-min) {
+            font-size: 35px;
+            line-height: 45px;
+          }
+        }
+        p {
+          @media only screen and ($bp-xs-max) {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+    .cycle-list  ul.slick-slider li {
+      @media only screen and ($bp-xl-min) {
+        padding-left: 30px;
+      }
+    }
+    
+  }
+}
+
+.history-panel__heading {
+  @media only screen and ($bp-lg-max) {
+  padding-top:120px!important;
+  }
+  @media only screen and ($bp-xxl-min) {
+        padding-left: 0px;
+      }
+}
+
+.cycle-list-carousel {
+	//width:100%;
+	//height:500px;
+	//border:1px solid white;
+}
+

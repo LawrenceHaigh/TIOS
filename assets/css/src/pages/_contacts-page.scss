@@ -1,0 +1,574 @@
+//
+// Contacts page
+// --------------------------------------------------
+
+.hero-panel-with-pullout {
+	padding-bottom:0px!important;
+  margin-bottom: 0!important;
+	@media only screen and ($bp-md-min) {
+		padding-bottom:82px;
+	}
+  .hero-image, img {
+    width: 100%;
+  }
+	.hero-panel-content {
+		position:relative;
+		padding-top:0;
+		bottom:0;
+    z-index: 9;
+		@media only screen and ($bp-lg-min) {
+			padding-top:95px;
+			position:absolute;
+			bottom:-70px;
+		}
+	}
+	.pullout-wrapper {
+		background:$white;
+		border-radius:5px;
+		overflow:auto;
+		box-shadow: 0 8px 8px -4px rgba(0,0,0,0.3);
+		margin-top:-60px;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    &__heading {
+      padding-top: 0;
+      &-text {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      &-number {
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    
+    &__left {
+      padding:  0;
+    }
+    @media only screen and ($bp-md-min) {
+			margin:-30px -50px;
+		}
+    @media only screen and ($bp-lg-min) {
+			margin:-180px -50px;
+		}
+    @media only screen and ($bp-lg-min) {
+			margin:0 -30px;
+		}
+		.pullout {
+			padding:30px;
+			&-event {
+				background:url(../../img/site_objects/bg_event_panel_small.png) $lightblue bottom right no-repeat;
+			}
+      
+      &.bg-purple {
+        @media only screen and ($bp-md-min) {
+          padding-bottom: 10px;
+        }
+      }
+      .h5, .h6 {
+        @include bookfont;
+      }
+      .h5 {
+        font-size: 16px;
+        line-height: 26px;
+        @media only screen and ($bp-xl-min) {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+      
+      a.external {
+        margin-top: 15px;
+      }
+		}
+    
+    a.trigger__form {
+      padding-left: 38px;
+      margin-right: 0;
+      border: 1px solid $white;
+      text-align: left;
+    }
+	}
+  
+  > .row {
+    @media only screen and ($bp-xs-min) {
+      margin-left:  15px;
+      margin-right: 15px; 
+    }
+    @media only screen and ($bp-md-min)  { 
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+    @media only screen and ($bp-lg-min) { 
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+  .contact-form-container {
+    padding: 0;
+    padding-top: 30px;
+    display: none;
+    z-index: 2;
+    
+    @media only screen and ($bp-md-min) { 
+      padding-top: 70px;
+    }
+    @media only screen and ($bp-lg-min) { 
+      padding-top: 100px;
+    }
+  }
+	.contact-form {
+		background:none;
+		padding:15px; 
+    visibility: hidden;
+		display:inline-block;
+    width: 100%;
+    margin: 0 -50px 0 0px;
+    border: 1px solid $keyline;
+    border-radius: 5px;
+    position: relative;
+    &.validated {
+      padding-bottom: 60px;
+    }
+		a.trigger__close-form {
+			text-indent:-100000px;
+			position:absolute;
+			right:0px;
+			top:0px;
+      z-index: 99;
+			@include sprite(icon-cross);
+			display:block;
+			cursor:pointer;
+      transform: scale(0.3);
+			@include link-hover-states {
+				opacity:0.75;
+			}
+		}
+    
+    p.small-text {
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      padding-bottom: 5px;
+    }
+    &__column {
+      padding: 0;
+      input.form-control, .select-wrapper {
+        margin-bottom: 5px;
+      }
+      
+      button {
+        margin:15px 0 0;
+        display:block;
+      }
+      .select-wrapper {
+        label.error {
+          margin-top: 5px;
+        }
+      }
+    }
+    
+
+
+
+    
+    
+    @media only screen and ($bp-md-min)  {
+      padding:30px; 
+      a.trigger__close-form {
+        right:15px;
+			  top:15px;
+      }
+      
+      &__column {
+        padding: 0;
+        padding-right: 15px;
+        height: 100%!important;
+        &-last {
+          padding-right: 0;
+        }
+        .form-control, .select-wrapper {
+          margin-bottom: 15px; 
+          &.form-control__last {
+            margin-bottom: 0;
+          }
+          
+          &.validated-error {
+            margin-bottom: 5px;
+          }
+          &.errorBorder {
+            border:1px solid $red;
+          }
+        }
+      }
+    }
+	}
+  
+  label.error {
+    color: $red;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .contact-form__column {
+    button.wide {
+      width: 100%;
+      margin-right: 0!important;
+      @media only screen and ($bp-md-min) { 
+        width: calc(33.33% - 10px);
+      }
+      @media only screen and ($bp-lg-min) { 
+        width: auto;
+      }
+    }
+  }
+}
+
+.box-out-contact {
+	position:relative;
+	padding:30px 30px 30px 30px;
+	margin-bottom:10px;
+  float:left;
+  width:100%;
+  display: none;
+  &-info {
+    .contact-cancel {
+      visibility: hidden;
+    }
+    @media only screen and ($bp-sm-min) { 
+      padding-right:160px;
+    }
+  }
+  &.validated {
+    padding-bottom: 60px;
+  }
+  @media only screen and ($bp-lg-min) {
+    width: calc(50% - 10px);
+    margin: 0px 5px 10px;
+  }
+	h2, h3 {
+		padding:0;
+		@extend .p;
+		font-size:16px;
+		line-height:26px;
+		strong {
+			display:block;
+		}
+	}
+	p {
+		padding:0;
+		+ .button {
+			margin-top:10px;
+		}
+	}
+	a.button {
+		margin-bottom:0;
+    margin-top: 10px;
+    margin-right: 10px;
+	}
+	img {
+		margin-top: 30px;
+    @media only screen and ($bp-sm-min) { 
+      position:absolute;
+      top:40px;
+      right:30px;
+      margin-top: 0;
+    }
+	}
+  form {
+    margin-top: 15px;
+    display: none;
+    .contact-form__column {
+      padding: 0;
+      .form-control, .select-wrapper {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  @media only screen and ($bp-md-max) { 
+    .contact-form__column {
+      .button.wide {
+        width: calc(50% - 8px);
+      }
+      .button.wide:last-child {
+        margin-right: 0!important;
+      }
+    }
+  }
+  
+  label.error {
+    color: $red;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form-control, .select-wrapper {
+    &.errorBorder {
+      border:1px solid $red;
+    }
+  }
+  
+}
+
+.ContactValidation {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  left: 0;
+  color: $white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: none;
+  &.purple {
+    background: $purple;
+  }
+  &.red {
+    background: $red;
+  }
+  > p {
+    padding: 8px 30px 4px!important;
+  }
+}
+
+.dropdown-trigger {
+  &.errorBorder {
+    color: $red!important;
+  }
+}
+
+
+
+.overlay.address {
+  .row {
+      .button {
+        position: absolute;
+        bottom: 20px;
+      }
+    .overlay {
+
+    }
+  }
+}
+
+// Media query > 1200px
+@media (min-width: 1200px) {
+  .overlay {
+    .row {
+      min-height: 360px;
+      background: $white;
+    }
+    margin-top: -70px;
+    position: relative;
+    &:nth-child(even) .row {
+      margin-left: 5px;
+    }
+    &:nth-child(odd) .row {
+      margin-right: 5px;
+    }
+  }
+  .content {
+    padding: 30px;
+
+
+  }
+}
+
+// Media query > 992px and < 1199px
+@media (min-width: 992px) and (max-width: 1199px) {
+  .overlay {
+    .row {
+      min-height: 230px;
+    }
+    margin-top: -60px;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 40px 0 30px;
+    h2 {
+      font-size:20px;
+    }
+    h3 {
+      font-size:22px;
+      line-height: 24px;
+    }
+  }
+}
+
+// Media query > 768px and < 991px
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .row.address {min-height: 280px;}
+
+  .overlay {
+    margin-top: -40px;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 30px 0 30px;
+    h2 {
+      font-size:16px;
+    }
+    h3 {
+      font-size:18px;
+      line-height: 20px;
+    }
+  }
+}
+
+
+// Media query > 576px and < 767px
+@media (min-width: 576px) and (max-width: 767px) {
+  .row.address {min-height: 280px;}
+  .overlay {
+    margin-top: 10px;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 30px 0 30px;
+    h2 {
+      font-size:20px;
+    }
+    h3 {
+      font-size:22px;
+      line-height: 24px;
+    }
+  }
+}
+
+
+// Media query < 575px
+@media (max-width: 575px) {
+  .row.address {min-height: 280px;}
+  .overlay {
+    margin-top: 10px;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 30px 0 30px;
+  }
+}
+
+
+.get-in-touch-panel {
+  background: $turquoise;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  color: $white;
+  .button {
+    position: absolute !important;
+    right: 20px;
+    top: 35%;
+  }
+}
+
+
+.contact-form-container {
+  padding: 0;
+  padding-top: 30px;
+  z-index: 2;
+
+  @media only screen and ($bp-md-min) {
+    padding-top: 70px;
+  }
+  @media only screen and ($bp-lg-min) {
+    padding-top: 100px;
+  }
+}
+.contact-form {
+  background:none;
+  padding:15px;
+  visibility: hidden;
+  display:inline-block;
+  width: 100%;
+  margin: 0 -50px 0 0px;
+  border: 1px solid $keyline;
+  border-radius: 5px;
+  position: relative;
+  &.validated {
+    padding-bottom: 60px;
+  }
+  a.trigger__close-form {
+    text-indent:-100000px;
+    position:absolute;
+    right:0px;
+    top:0px;
+    z-index: 99;
+    @include sprite(icon-cross);
+    display:block;
+    cursor:pointer;
+    transform: scale(0.3);
+    @include link-hover-states {
+      opacity:0.75;
+    }
+  }
+
+  p.small-text {
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    padding-bottom: 5px;
+  }
+  &__column {
+    padding: 0;
+    input.form-control, .select-wrapper {
+      margin-bottom: 5px;
+    }
+
+    button {
+      margin:15px 0 0;
+      display:block;
+    }
+    .select-wrapper {
+      label.error {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  @media only screen and ($bp-md-min)  {
+    padding:30px;
+    a.trigger__close-form {
+      right:15px;
+      top:15px;
+    }
+
+    &__column {
+      padding: 0;
+      padding-right: 15px;
+      height: 100%!important;
+      &-last {
+        padding-right: 0;
+      }
+      .form-control, .select-wrapper {
+        margin-bottom: 15px;
+        &.form-control__last {
+          margin-bottom: 0;
+        }
+
+        &.validated-error {
+          margin-bottom: 5px;
+        }
+        &.errorBorder {
+          border:1px solid $red;
+        }
+      }
+    }
+  }
+  .ContactEnquiry {
+    min-height: 126px;
+  }
+}
