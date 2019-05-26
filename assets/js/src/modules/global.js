@@ -66,7 +66,10 @@ $('.readmore').on('click', function(e){
     e.preventDefault();
     $(this).prev('.mobile-specs').slideToggle(500);
     $(this).toggleClass('close');
-    $(this).html($(this).html()=='More info'?'Less info':'More info');
+    $(this).find('.link').text(function (index, text) {
+        return (text == 'More info' ? 'Less info' : 'More info');
+    });
+
 });
 
 

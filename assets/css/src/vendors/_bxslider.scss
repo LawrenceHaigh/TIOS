@@ -43,8 +43,11 @@
 
   .bx-pager,.bx-controls-auto{
     position: absolute;
-    bottom: -30px;
+    bottom: -45px;
     width: 100%;
+    @media (max-width: 575px) {
+      bottom: -50px;
+    }
   }
 
 
@@ -84,10 +87,14 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    &.active{
+      background: $turquoise;
+    }
+
   }
 
   .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active {
-    background: #000;
+    background: $turquoise;
   }
 }
 
@@ -187,13 +194,18 @@
   bottom: 0;
   left: 0;
   background: #666\9;
-  background: rgba(80, 80, 80, 0.75);
+  background: rgba(80, 80, 80, 0.5);
   width: 100%;
   span {
     color: #fff;
     display: block;
-    font-size: .85em;
+    font-size: 16px;
     padding: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .bx-wrapper .bx-caption {
+    display: none;
   }
 }
 

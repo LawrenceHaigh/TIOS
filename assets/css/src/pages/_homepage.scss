@@ -41,17 +41,20 @@
         left: 30px;
         top: auto;
         color: $white;
+        @media (min-width: 992px) and (max-width: 1199px) {
+          bottom: 100px;
+        }
         // Media query > 768px and < 991px
         @media (min-width: 768px) and (max-width: 991px) {
-          bottom: 70px;
+          bottom: 50px;
         }
         // Media query > 576px and < 767px
         @media (min-width: 576px) and (max-width: 767px) {
-          bottom: 20px;
+          bottom: 30px;
         }
         // Media query < 575px
         @media (max-width: 575px) {
-          bottom: 50px;
+          bottom: 40px;
         }
         opacity: 0;
         transition: opacity 0.5s ease-in 0.4s;
@@ -65,6 +68,10 @@
           font-size: 34px;
           line-height: 44px;
           padding-bottom: 30px;
+          @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 24px;
+            line-height: 34px;
+          }
           @media (min-width: 576px) and (max-width: 767px) {
             font-size: 24px;
             line-height: 34px;
@@ -74,8 +81,6 @@
             line-height: 34px;
           }
 
-
-
           a.button, button {
             font-size: 16px;
             margin-left: 0px;
@@ -83,12 +88,6 @@
         }
 
       }
-
-
-
-
-
-
     }
   }
   .hero-panel {
@@ -105,7 +104,7 @@
       }
       // Media query > 992px and < 1199px
       @media (min-width: 992px) and (max-width: 1199px) {
-        min-height: 360px;
+        min-height: 700px;
       }
       // Media query > 768px and < 991px
       @media (min-width: 768px) and (max-width: 991px) {
@@ -122,13 +121,14 @@
 
       // Media query < 575px
       @media (max-width: 575px) {
-        min-height: 320px;
+        min-height: 560px;
       }
 
       .hero-panel-content {
         position: absolute;
         left: 30px;
         color: $white;
+        overflow: hidden;
         // Media query > 1200px
         @media (min-width: 1200px) {
             bottom: 20px;
@@ -148,11 +148,9 @@
         // Media query < 575px
         @media (max-width: 575px) {
           bottom: 20px;
-          position: relative;
-          margin-top: -50px;
+          top: auto;
         }
-
-        overflow: auto;
+        ///overflow: auto;
         opacity: 0;
         transition: opacity 0.5s ease-in 0.4s;
         h1, .h1 {
@@ -167,6 +165,21 @@
           font-size: 34px;
           line-height: 44px;
           padding-bottom: 30px;
+          @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 24px;
+            line-height: 35px;
+            padding-bottom: 10px;
+          }
+          @media (min-width: 576px) and (max-width: 767px) {
+            font-size: 24px;
+            line-height: 35px;
+            padding-bottom: 10px;
+          }
+          @media (max-width: 575px) {
+            font-size: 24px;
+            line-height: 35px;
+            padding-bottom: 10px;
+          }
 
           a.button, button {
             font-size: 16px;
@@ -187,6 +200,11 @@
     h3 {
       font-size: 30px;
       line-height: 40px;
+      @media (max-width: 575px) {
+        font-size: 28px;
+        line-height: 30px;
+      }
+
     }
 
   }
@@ -202,7 +220,7 @@
         background: url('../../img/_build/home-vessel-info.jpg') no-repeat top center;
         background-size: 100% auto;
         margin: 0;
-        min-height: 485px;
+        min-height: 455px;
       }
     }
   }
@@ -219,7 +237,7 @@
         background: url('../../img/_build/home-news.jpg') no-repeat top center;
         background-size: 100% auto;
         margin: 0;
-        min-height: 515px;
+        min-height: 480px;
       }
     }
   }
@@ -337,8 +355,14 @@
 }
 
   #home-what-we-do {
-    margin:40px 0;
+    margin:20px 0 30px 0;
     background: url('../../img/_build/home-what-we-do.jpg') no-repeat top center;
+    overflow: hidden;
+    @media (max-width: 575px) {
+      margin: 0;
+      background: url('../../img/_build/home-what-we-do-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+    }
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -348,14 +372,25 @@
   #home-careers {
     position: relative;
     padding-bottom: 40px;
+    @media (max-width: 575px) {
+      padding-top: 20px;
+    }
     h2 {
       font-size: 18px;
       line-height: 23px;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 16px;
+        line-height: 25px;
+      }
     }
     h3 {
       font-size: 30px;
       line-height:40px;
       padding: 10px 0 15px 0;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 23px;
+        line-height: 30px;
+      }
     }
 
    .row {
@@ -418,10 +453,26 @@
        left: 30px;
        right: 30px;
        padding: 0 30px 20px 30px;
+       @media (max-width: 575px) {
+         left: 20px;
+         padding: 0 30px 20px 20px;
+       }
      }
    }
   }
+}
 
+@media (max-width: 575px) {
+  main.about-us {
+    .hero-panel-image {
+      background: url('../../img/_build/about-us-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
 
-  
-} 
+      img.hero-image, img {
+        display: none;
+      }
+    }
+
+  }
+}

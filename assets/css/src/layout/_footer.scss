@@ -90,5 +90,15 @@ footer {
 
 	.site-logo {
 	  float: right;
+		@media (min-width: 576px) and (max-width: 767px) {
+			float: left;
+			margin: 20px 0px;
+			width: 200px;
+		}
+		@media (max-width: 575px) {
+			float: left;
+			margin: 20px 0px;
+			width: 200px;
+		}
   }
 }

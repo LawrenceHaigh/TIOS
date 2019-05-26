@@ -342,26 +342,59 @@
 
 
 
-.overlay.address {
+.overlay {
+  position: relative;
+  
   .row {
       .button {
-        position: absolute;
-        bottom: 20px;
+        margin-top: 20px;
       }
-    .overlay {
-
-    }
+  
   }
+
 }
 
 // Media query > 1200px
 @media (min-width: 1200px) {
   .overlay {
-    .row {
-      min-height: 360px;
+    .row.address {
+      min-height: 340px;
       background: $white;
     }
     margin-top: -70px;
+    position: relative;
+    &:nth-child(even) .row {
+      margin-left: 5px;
+      padding-right: 0px;
+    }
+    &:nth-child(odd) .row {
+      margin-right: 5px;
+      padding-left: 0px;
+    }
+  }
+  .address {
+    .content {
+      padding: 30px;
+        .feature-text{
+          .button {
+            position: absolute;
+            bottom: 0;
+          }
+        }
+
+    }
+  }
+
+}
+
+// Media query > 992px and < 1199px
+@media (min-width: 992px) and (max-width: 1199px) {
+  .overlay {
+    .row.address {
+      min-height: 330px;
+      background: $white;
+    }
+    margin-top: -60px;
     position: relative;
     &:nth-child(even) .row {
       margin-left: 5px;
@@ -371,54 +404,58 @@
     }
   }
   .content {
-    padding: 30px;
-
-
-  }
-}
-
-// Media query > 992px and < 1199px
-@media (min-width: 992px) and (max-width: 1199px) {
-  .overlay {
-    .row {
-      min-height: 230px;
-    }
-    margin-top: -60px;
-    position: relative;
-  }
-  .content {
-    position: absolute;
-    bottom: 10px;
-    padding: 0 40px 0 30px;
+    padding: 20px 40px 0 30px;
     h2 {
-      font-size:20px;
+      font-size:25px;
     }
     h3 {
       font-size:22px;
       line-height: 24px;
     }
+    .feature-text{
+      .button {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
   }
 }
 
 // Media query > 768px and < 991px
 @media (min-width: 768px) and (max-width: 991px) {
 
-  .row.address {min-height: 280px;}
+  .row.address {min-height: 340px;}
 
   .overlay {
     margin-top: -40px;
     position: relative;
+    .address {
+      background: $white;
+    }
+    &:nth-child(even) .row {
+      margin-left: 5px;
+      padding-right: 0px;
+    }
+    &:nth-child(odd) .row {
+      margin-right: 5px;
+      padding-left: 0px;
+    }
   }
   .content {
-    position: absolute;
-    bottom: 10px;
-    padding: 0 30px 0 30px;
+    padding: 20px 30px 0 30px;
     h2 {
-      font-size:16px;
+      font-size:22px;
     }
     h3 {
       font-size:18px;
       line-height: 20px;
+    }
+    .feature-text{
+      .button {
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 }
@@ -436,7 +473,7 @@
     bottom: 10px;
     padding: 0 30px 0 30px;
     h2 {
-      font-size:20px;
+      font-size:22px;
     }
     h3 {
       font-size:22px;
@@ -448,16 +485,37 @@
 
 // Media query < 575px
 @media (max-width: 575px) {
-  .row.address {min-height: 280px;}
+  .row.address {
+    margin: 10px;
+  }
   .overlay {
     margin-top: 10px;
     position: relative;
   }
   .content {
-    position: absolute;
-    bottom: 10px;
-    padding: 0 30px 0 30px;
+    position: relative;
+    padding: 10px;
+    h2 {
+      font-size:22px;
+    }
+    h3 {
+      font-size:22px;
+      line-height: 24px;
+    }
   }
+
+  main.contact {
+    .hero-panel-image {
+      background: url('../../img/_build/contact-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+      img.hero-image {
+        display: none;
+      }
+    }
+
+  }
+
 }
 
 
@@ -468,10 +526,17 @@
   margin-bottom: 50px;
   position: relative;
   color: $white;
-  .button {
-    position: absolute !important;
+  a.button {
+    position: absolute ;
     right: 20px;
     top: 35%;
+    @media (max-width: 768px) {
+      position: relative ;
+      right: auto;
+      top: auto;
+      margin: 0;
+    }
+
   }
 }
 

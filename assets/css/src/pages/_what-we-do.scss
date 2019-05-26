@@ -30,3 +30,73 @@
 		@media only screen and ($bp-xl-min) { height:$cycle-carousel-xl-height; }
   }
 }
+
+
+
+// Mobile hero images switches
+
+@media (max-width: 575px) {
+
+  main.what-we-do {
+    .hero-panel-image {
+      background: url('../../img/_build/what-we-do-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+
+      img.hero-image {
+        display: none;
+      }
+    }
+  }
+
+
+  main.vessel-info {
+    .hero-panel-image {
+      background: url('../../img/_build/vessel-info-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+
+      img.hero-image, img {
+        display: none;
+      }
+    }
+  }
+
+
+  main.careers {
+    .hero-panel-image {
+      background: url('../../img/_build/careers-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+
+      img.hero-image, img {
+        display: none;
+      }
+    }
+  }
+
+  main.news {
+    .hero-panel-image {
+      background: url('../../img/_build/news-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+
+      img.hero-image, img {
+        display: none;
+      }
+    }
+  }
+
+  body.rental-equipment {
+    .hero-panel-image {
+      background: url('../../img/_build/rental-equipment-hero-mobile.jpg') no-repeat top center;
+      background-size: 100% auto;
+      min-height: 320px;
+
+      img.hero-image, img {
+        display: none;
+      }
+    }
+  }
+
+}
