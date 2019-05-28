@@ -127,11 +127,11 @@ a:link {
 .bx-controls-direction a  {
         position: absolute;
         z-index: 20;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        background: rgba(255, 255, 255, 0.3);
-        border: 2px solid $white;
+        //width: 40px;
+        //height: 40px;
+        //border-radius: 100%;
+        //background: rgba(255, 255, 255, 0.3);
+        //border: 2px solid $white;
         //text-indent: -100000px;
         transition: all 0.2s ease;
         &:after {
@@ -142,7 +142,8 @@ a:link {
             transform: translateY(-50%);
         }
     @include link-hover-states {
-        background: rgba(255, 255, 255, 1);
+        opacity: 0.9;
+        //background: rgba(255, 255, 255, 1);
         &:after,
         &:before {
             //background: $turquoise;
@@ -151,15 +152,28 @@ a:link {
 
 
     &.bx-next {
+        margin-top: -24px;
+        @media (max-width: 575px) {
+            margin-top: -10px;
+        }
         &:after {
-            @include sprite(arrow-right);
-            left: 15px;
+            @include sprite(bx-arrow);
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+            left: -15px;
             top: 15px;
+            @media (min-width: 576px) and (max-width: 767px) {
+                top: 0;
+            }
         }
     }
     &.bx-prev {
         &:after {
-            @include sprite(arrow-left);
+            @include sprite(bx-arrow);
             left: 12px;
             top: 15px;
         }

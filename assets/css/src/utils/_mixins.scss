@@ -24,7 +24,17 @@
   font-family: FFClanWebProBook,sans-serif; 
   font-weight: normal;
   font-style: normal;
+  //transition: text-shadow .3s;
 }
+
+@mixin bookfonthover() {
+  font-family: FFClanWebProBook,sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 0 0 .65px #fff, 0 0 .65px #fff;
+}
+
+
 @mixin bookfontbold() {
   font-family: FFClanWebProBook,sans-serif;
   font-weight: bold;

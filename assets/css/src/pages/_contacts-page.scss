@@ -530,6 +530,9 @@
     position: absolute ;
     right: 20px;
     top: 35%;
+    &:hover {
+      border: 1px solid $white;
+    }
     @media (max-width: 768px) {
       position: relative ;
       right: auto;

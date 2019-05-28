@@ -121,7 +121,7 @@ a.link-external {
         position: absolute;
         top: 7px;
         left: 0;
-        @include sprite(arrow-external);
+        @include sprite(tios-external);
     }
 }
 
@@ -152,6 +152,7 @@ a.link-back {
     padding-bottom: 10px;
     display: inline-block;
     position: relative;
+    color: $nearlyblack;
     @extend .hover-link;
     @media only screen and ($bp-xxl-min) {
         //margin-left: 30px;
@@ -161,8 +162,8 @@ a.link-back {
         position: absolute;
         top: 20px;
         left: 0;
-        @include sprite(arrow-right);
-        transform: rotate(180deg);
+        @include sprite(tios-arrow-left);
+        //transform: rotate(180deg);
     }
 }
 

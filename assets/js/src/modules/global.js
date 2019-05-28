@@ -67,7 +67,7 @@ $('.readmore').on('click', function(e){
     $(this).prev('.mobile-specs').slideToggle(500);
     $(this).toggleClass('close');
     $(this).find('.link').text(function (index, text) {
-        return (text == 'More info' ? 'Less info' : 'More info');
+        return (text == 'View specification' ? 'Hide specification' : 'View specification');
     });
 
 });

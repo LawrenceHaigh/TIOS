@@ -5,10 +5,20 @@
   background: $verylightgrey;
 }
 
+.news-header {
+font-size: 20px;
+  line-height:26px;
+}
+.news-article-title {
+  font-size: 34px;
+  line-height: 44px;
+}
+
 .date {
   strong {
     color: $turquoise;
   }
+  font-size: 14px;
 }
 .tile-feed {
 	.box-out {

@@ -111,22 +111,37 @@
 .bx-wrapper{
   .bx-prev {
     left: 10px;
+    @media (max-width: 575px) {left: -15px;}
     &:hover{
 
     };
   }
   .bx-next {
     right: 10px;
+
+
+
     &:hover{
 
-    };
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      margin-top: 0;
+    }
+    @media (max-width: 575px) {
+      right: -7px; top: 30% !important;
+    }
+
+
   }
 }
 
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
-  margin-top: -16px;
+  @media (max-width: 575px) {
+    top: 40%;
+  }
   outline: 0;
   a.disabled {
     display: none;

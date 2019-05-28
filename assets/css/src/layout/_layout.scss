@@ -80,14 +80,19 @@ a.readmore {
 
         }
         span.link {
-            content: "fok"
+
         }
     }
 
 
 }
 
-
+.careers {
+    strong {
+        padding-bottom: 15px;
+        display: inline-block;
+    }
+}
 
 .container,
 .container-fluid > .row {
@@ -544,6 +549,9 @@ main {
     }
     img.keyline-border {
         margin-bottom: 20px;
+    }
+    a[href^="mailto"] {
+        @include mediumfont;
     }
 }
 
@@ -1939,12 +1947,12 @@ main {
 
             @media only screen and ($bp-xs-min) {
                 top: 50%;
-                left: 50%;
-                padding-left: 20px;
+                left: 55%;
+                padding-left: 21px;
                 padding-top: 20px;
             }
             @media only screen and ($bp-sm-min) {
-                top: 50%;
+                top: 51%;
                 left: 50%;
                 padding: 0;
             }
@@ -1957,7 +1965,7 @@ main {
                 left: 50%;
             }
             @media only screen and ($bp-xl-min) {
-                top: 50%;
+                top: 55%;
                 left: 50%;
             }
 
@@ -2093,7 +2101,7 @@ main {
     overflow: hidden;
     .trigger__video {
         top: 50%;
-        left: 55%;
+        left: 50%;
         @media only screen and ($bp-sm-min) {
             left: 50%;
         }
@@ -2141,7 +2149,7 @@ main {
     margin: -40px 0 0 -40px;
     @media only screen and ($bp-xs-min) {
         top: 50%;
-        left: 50%;
+        left: 58%;
         padding-left: 0px;
         padding-top: 20px;
     }

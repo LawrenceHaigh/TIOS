@@ -234,6 +234,10 @@ p, .p {
 	}
 }
 
+a.black {
+	color: $nearlyblack !important;
+}
+
 .data-sheet {
 	@include mediumfont;
 }
@@ -245,7 +249,11 @@ p, .p {
 		padding: 20px 0;
 	}
 }
-
+.four0four {
+	h3 {
+		font-size: 22px;
+	}
+}
 strong, .bold {
   /* if using a webfont...
   font-weight: normal;
