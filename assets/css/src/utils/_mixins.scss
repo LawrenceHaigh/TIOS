@@ -301,6 +301,7 @@ $sprite: map-get($icons, sprite) !default;
         background-position: mq-px2em(map-get($iconMap, x) - 5) mq-px2em(map-get($iconMap, y) - 5);
     }
 
+
 }
 
 @mixin placeholder {

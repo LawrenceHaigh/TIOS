@@ -122,8 +122,6 @@ a:link {
     }
 }
 
-
-
 .bx-controls-direction a  {
         position: absolute;
         z-index: 20;
@@ -150,7 +148,6 @@ a:link {
         }
     }
 
-
     &.bx-next {
         margin-top: -24px;
         @media (max-width: 575px) {
@@ -166,9 +163,17 @@ a:link {
             -ms-filter: "FlipH";
             left: -15px;
             top: 15px;
+
             @media (min-width: 576px) and (max-width: 767px) {
                 top: 0;
             }
+            @media (max-width: 575px) {
+                background-size: 400% auto;
+                background-position: -200.8px 5px;
+                width: 35px;
+                height: 35px;
+            }
+
         }
     }
     &.bx-prev {
@@ -176,6 +181,13 @@ a:link {
             @include sprite(bx-arrow);
             left: 12px;
             top: 15px;
+            @media (max-width: 575px) {
+                background-size: 400% auto;
+                background-position: -200.8px 5px;
+                width: 35px;
+                height: 35px;
+            }
         }
     }
+
 }

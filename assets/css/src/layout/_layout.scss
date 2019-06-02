@@ -1870,6 +1870,13 @@ main {
                 background-repeat: no-repeat;
                 background-size: 100% auto;
             }
+            // Media query < 320px
+            @media (max-width: 320px) {
+                min-height: 505px;
+                background-image: url('../../img/_build/home-hero-mobile.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
 
 
             img {
@@ -2331,4 +2338,9 @@ span.panel-fade {
         content: "";
         clear: both;
     }
+}
+
+
+.col-xs-offset-1 {
+    margin-left: 4.33333%;
 }
