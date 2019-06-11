@@ -74,9 +74,9 @@ body:before {content: "mobilenav";display: none;}
 			content:"";
 			background:$white;
 			height:1px;
-			width:15px;
-			top:8px;
-			left:-2px;
+			width:35px;
+			top:10px;
+			left:-25px;
 		}
 		&:before {
 			transform:rotate(-45deg);

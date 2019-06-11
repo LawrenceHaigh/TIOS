@@ -38,7 +38,7 @@
       .hero-panel-content {
         position: absolute;
         bottom: 120px;
-        left: 30px;
+        left: 15px;
         top: auto;
         color: $white;
         @media (min-width: 992px) and (max-width: 1199px) {
@@ -157,6 +157,7 @@
         // Media query < 575px
         @media (max-width: 575px) {
           bottom: 20px;
+          left: 0px;
           top: auto;
         }
         ///overflow: auto;
@@ -357,7 +358,7 @@
     .content {
       position: absolute;
       bottom: 10px;
-      padding: 20px 30px 0 30px;
+      padding: 20px 30px 0 15px;
       background: $white;
       &.white-text {
         h2 {
@@ -385,7 +386,7 @@
 }
 
   #home-what-we-do {
-    margin:20px 0 30px 0;
+    margin:20px auto 30px auto;
     background: url('../../img/_build/home-what-we-do.jpg') no-repeat top center;
     overflow: hidden;
     @media (max-width: 575px) {
@@ -485,7 +486,7 @@
        padding: 0 30px 20px 30px;
        @media (max-width: 575px) {
          left: 20px;
-         padding: 0 30px 10px 20px;
+         padding: 0 30px 10px 15px;
        }
      }
    }
